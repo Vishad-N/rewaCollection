@@ -1,0 +1,40 @@
+.footer {
+  border-top: 1px solid rgba(42, 36, 28, 0.08);
+  padding: 48px 64px 28px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer h4 {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.footer p,
+.footer a {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-weight: 300;
+  display: block;
+}
+
+.footBrand {
+  font-family: var(--font-cormorant), serif;
+  font-size: 28px;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+
+.copy {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 24px;
+  border-top: 1px solid rgba(42, 36, 28, 0.06);
+  margin-top: 12px;
+}

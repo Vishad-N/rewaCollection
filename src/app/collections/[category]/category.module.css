@@ -1,0 +1,296 @@
+.page {
+  padding: 60px 0 0; /* Trust strip at bottom handles the bottom padding */
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+/* Dynamic Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 64px;
+}
+
+.header h1 {
+  font-family: var(--font-cormorant), serif;
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  color: var(--ink);
+  text-transform: capitalize;
+}
+
+.headerCopy {
+  font-size: 14.5px;
+  color: var(--ink);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.headerCopy span {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* Thin Shop Bar */
+.shopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px;
+  border-top: 1px solid rgba(42, 36, 28, 0.1);
+  border-bottom: 1px solid rgba(42, 36, 28, 0.1);
+  margin-bottom: 60px;
+}
+
+.shopChips {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.shopChips button {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.shopChips button:hover,
+.shopChips button.active {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.shopChips span {
+  font-size: 10px;
+  opacity: 0.5;
+}
+
+.shopRight {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.sortSelect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* Smart Grid Systems */
+.gridWrapper {
+  padding: 0 64px;
+  margin-bottom: 100px;
+}
+
+/* 1 Item */
+.grid1 {
+  display: flex;
+  justify-content: center;
+}
+.grid1 .card {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* 2 Items */
+.grid2 {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.grid2 .card {
+  width: 100%;
+  max-width: 500px; /* Two of these = 1000px max width */
+}
+
+/* 3+ Items */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Shared Card Styles */
+.card {
+  position: relative;
+  background: var(--beige);
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  display: block;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 252, 248, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.cardMeta {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(255, 252, 248, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.cardMeta::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 17.5px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--angle), transparent 50%, var(--gold-dark) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .cardMeta::before {
+  opacity: 1;
+  animation: borderSpin 2.5s linear infinite;
+}
+
+@keyframes borderSpin {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
+}
+
+.cardMeta h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
+
+.cardMetal {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cardPrice {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Empty State / Custom Link */
+.emptyState {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(42, 36, 28, 0.1);
+}
+
+.emptyState p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.emptyState a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Trust Strip (Atelier Block) */
+.trustStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 80px 64px;
+  background: var(--beige);
+  border-top: 1px solid rgba(42, 36, 28, 0.05);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trustIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 50%;
+  color: var(--ink);
+}
+
+.trustIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.trustText h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.trustText p {
+  font-size: 11px;
+  color: var(--muted);
+}

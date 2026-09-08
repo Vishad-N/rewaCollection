@@ -1,0 +1,131 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(246, 241, 234, 0.98);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header {
+  padding: 40px 64px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid rgba(42, 36, 28, 0.1);
+}
+
+.searchIcon {
+  color: var(--muted);
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: var(--font-cormorant), serif;
+  font-size: 48px;
+  color: var(--ink);
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(42, 36, 28, 0.3);
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.closeBtn:hover {
+  background: rgba(42, 36, 28, 0.05);
+}
+
+.results {
+  flex: 1;
+  padding: 64px;
+  overflow-y: auto;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--muted);
+  font-size: 18px;
+  margin-top: 100px;
+}
+
+/* Reusing card styles */
+.card {
+  position: relative;
+  background: var(--beige);
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 3/4.1;
+  display: block;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardMeta {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(255, 252, 248, 0.92);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cardMeta h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.cardMeta span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--white);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.arrow svg { width: 14px; height: 14px; }

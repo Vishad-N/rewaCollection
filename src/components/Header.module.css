@@ -1,0 +1,45 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(246, 241, 234, 0.86);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(42, 36, 28, 0.06);
+}
+
+.brand {
+  font-family: var(--font-cormorant), serif;
+  font-size: 22px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  gap: 36px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.nav a:hover {
+  color: var(--ink);
+}
+
+.headerActions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  color: var(--ink);
+}
+
+.headerActions svg {
+  width: 18px;
+  height: 18px;
+}
