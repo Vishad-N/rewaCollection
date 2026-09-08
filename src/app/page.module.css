@@ -343,7 +343,7 @@
 /* CATEGORY STRIP */
 .cats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   margin: 8px 48px 80px;
   border-radius: 20px;
   overflow: hidden;
@@ -356,6 +356,8 @@
   align-items: flex-end;
   padding: 28px;
   color: var(--white);
+  text-decoration: none;
+  overflow: hidden;
 }
 
 .cat img {
@@ -365,6 +367,11 @@
   height: 100%;
   object-fit: cover;
   object-position: center 35%;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cat:hover img {
+  transform: scale(1.06);
 }
 
 .cat::after {
@@ -372,6 +379,12 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(20, 16, 12, 0.45), rgba(20, 16, 12, 0.05));
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease;
+}
+
+.cat:hover::after {
+  background-color: rgba(20, 16, 12, 0.2);
 }
 
 .cat h3 {
@@ -383,4 +396,12 @@
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+.cat h3 span {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cat:hover h3 span {
+  transform: translateX(8px);
 }

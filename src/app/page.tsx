@@ -86,7 +86,7 @@ export default function Home() {
 
       <section className={styles.products} id="products">
         <div className={styles.productsHead}>
-          <h2>Our Products</h2>
+          <h2>New from the atelier</h2>
           <Link href="/collections">View all →</Link>
         </div>
         <div className={styles.grid}>
@@ -131,6 +131,20 @@ export default function Home() {
           <img src="/imagine_images/md0OH.jpg" alt="Earrings" />
           <h3>
             Earrings <span>→</span>
+          </h3>
+        </Link>
+        <Link className={styles.cat} href="/collections/necklaces">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/imagine_images/d4U7S.jpg" alt="Necklaces" />
+          <h3>
+            Necklaces <span>→</span>
+          </h3>
+        </Link>
+        <Link className={styles.cat} href="/collections/bracelets">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/imagine_images/9rvvk.jpg" alt="Bracelets" />
+          <h3>
+            Bracelets <span>→</span>
           </h3>
         </Link>
       </section>
