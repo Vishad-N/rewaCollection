@@ -237,26 +237,24 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           <h2>You <span>May Also Like</span></h2>
         </div>
         <div className={styles.grid}>
-          {[
-            { img: "YvnEZ.jpg", name: "Aurelia Gold Studs", price: "₹ 15,000", oldPrice: "₹ 20,000", cat: "Earrings" },
-            { img: "md0OH.jpg", name: "Twisted Gold Hoops", price: "₹ 18,500", oldPrice: "₹ 24,000", cat: "Earrings" },
-            { img: "d4U7S.jpg", name: "Tear Drop Pendant", price: "₹ 22,400", oldPrice: "₹ 30,000", cat: "Necklaces" },
-            { img: "9rvvk.jpg", name: "Classic Diamond Bracelet", price: "₹ 86,000", oldPrice: "₹ 110,000", cat: "Bracelets" },
-          ].map((item, i) => (
-            <Link href="/products/placeholder" key={i} className={styles.card}>
-              <div className={styles.cardBadge}>-25%</div>
-              <button className={styles.cardWishlist}>
+          {products
+            .filter((p) => p.id !== product.id)
+            .slice(0, 4)
+            .map((item) => (
+            <Link href={`/products/${item.id}`} key={item.id} className={styles.card}>
+              {item.badge && <div className={styles.cardBadge}>{item.badge}</div>}
+              <button className={styles.cardWishlist} onClick={(e) => e.preventDefault()}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" /></svg>
               </button>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/imagine_images/${item.img}`} alt={item.name} />
+              <img src={item.image} alt={item.name} />
               
               <div className={styles.cardMeta}>
-                <span className={styles.cardCategory}>{item.cat}</span>
+                <span className={styles.cardCategory}>{item.category}</span>
                 <h3 className={styles.cardTitle}>{item.name}</h3>
                 <div className={styles.cardPrices}>
-                  <span className={styles.cardPrice}>{item.price}</span>
-                  <span className={styles.cardOldPrice}>{item.oldPrice}</span>
+                  <span className={styles.cardPrice}>{formatPrice(item.price)}</span>
+                  {item.oldPrice && <span className={styles.cardOldPrice}>{formatPrice(item.oldPrice)}</span>}
                 </div>
                 <div className={styles.cardCartBtn}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

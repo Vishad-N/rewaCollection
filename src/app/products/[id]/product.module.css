@@ -247,7 +247,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: var(--ink);
+  background: linear-gradient(to top, var(--gold-dark) 50%, var(--ink) 50%);
+  background-size: 100% 200%;
+  background-position: top;
   color: var(--white);
   height: 48px;
   padding: 0 32px;
@@ -257,12 +259,19 @@
   letter-spacing: 0.05em;
   border: none;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btnPrimary:hover {
+  background-position: bottom;
 }
 .btnGhost {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: linear-gradient(to top, var(--ink) 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: top;
   color: var(--ink);
   border: 1px solid var(--ink);
   height: 48px;
@@ -272,6 +281,12 @@
   font-weight: 500;
   letter-spacing: 0.05em;
   cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btnGhost:hover {
+  background-position: bottom;
+  color: var(--cream);
 }
 .wishlistBtn {
   width: 48px;
@@ -554,3 +569,93 @@
   justify-content: center;
 }
 .cardCartBtn svg { width: 16px; height: 16px; }
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .page {
+    padding: 120px 40px 60px;
+  }
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .featuresSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 100px 20px 40px;
+  }
+  .breadcrumb {
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .topSection {
+    margin-bottom: 40px;
+  }
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .prices {
+    margin-bottom: 24px;
+  }
+  .actionRow {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .quantity {
+    width: 100%;
+  }
+  .btnPrimary, .btnGhost {
+    flex: 1;
+    min-width: calc(50% - 6px);
+    padding: 0 16px;
+    font-size: 11px;
+  }
+  .wishlistBtn {
+    width: 100%;
+  }
+  .tabHeaders {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .tabsSection {
+    padding: 24px 20px;
+    margin-bottom: 60px;
+  }
+  .attributesTable td {
+    padding: 12px;
+    font-size: 13px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .cardMeta {
+    padding: 10px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+  .cardTitle {
+    font-size: 12px;
+  }
+  .cardPrice {
+    font-size: 13px;
+  }
+  .featuresSection {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+}

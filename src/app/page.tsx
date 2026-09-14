@@ -1,49 +1,53 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import ReelsSection from "@/components/ReelsSection";
-import { products, formatPrice } from "@/data/products";
+
+const portfolioItems = [
+  { id: "celeste-solitaire-ring", name: "Celeste Solitaire Ring", desc: "Fashion jewellery", link: "/products/celeste-solitaire-ring", image: "/product_ring_1789371374171.jpg" },
+  { id: "clutch", name: "Beaded envelope clutch", desc: "Handbags", link: "/products/clutch", image: "/product_clutch_1789371394234.jpg" },
+  { id: "tote", name: "Raffia market tote", desc: "Handbags", link: "/products/tote", image: "/product_tote_1789371407229.jpg" },
+  { id: "cushion", name: "Embroidered cushion", desc: "Home", link: "/products/cushion", image: "/product_cushion_1789371419434.jpg" },
+];
 
 export default function Home() {
   return (
     <main>
       <section className={styles.hero}>
         <div className={styles.heroCopy}>
-          <div className={styles.eyebrow}>Collection 2026</div>
+          <div className={styles.eyebrow}>MANUFACTURER · EXPORTER · SINCE 2001</div>
           <h1>
             REVA
             <br />
-            CREATION
+            CREATIONS
           </h1>
-          <div className={styles.heroTag}>A celestial touch for timeless moments.</div>
+          <div className={styles.heroTag}>Handmade in India. Built for global retail.</div>
           <p>
-            Discover exquisitely crafted jewellery inspired by the quiet beauty of
-            heirlooms. Each piece is made to bring elegance and grace to your most
-            cherished occasions.
+            We design and manufacture fashion handbags, jewellery and home furnishings with skilled women artisans. Each collection is sampled with care and finished to export standards for international buyers.
           </p>
-          <Link className={styles.btn} href="/collections">
-            Discover <span>→</span>
+          <Link className={styles.btn} href="/contact">
+            START A DEVELOPMENT <span>→</span>
           </Link>
+          <div className={styles.heroCats}>
+            <Link href="/collections/handbags">
+              HANDBAGS <span>→</span>
+            </Link>
+            <Link href="/collections/jewellery">
+              JEWELLERY <span>→</span>
+            </Link>
+            <Link href="/collections/home">
+              HOME <span>→</span>
+            </Link>
+            <Link href="/collections/private-label">
+              PRIVATE LABEL <span>→</span>
+            </Link>
+          </div>
         </div>
         <div className={styles.heroVisual}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/imagine_images/sJG9X.jpg"
-            alt="Reva Creation rings on porcelain hand"
+            src="/hero_bag_jewellery_1789373411823.jpg"
+            alt="Reva Creations"
           />
-          <div className={styles.heroCats}>
-            <Link href="/collections/rings">
-              Rings <span>→</span>
-            </Link>
-            <Link href="/collections/earrings">
-              Earrings <span>→</span>
-            </Link>
-            <Link href="/collections/necklaces">
-              Necklaces <span>→</span>
-            </Link>
-            <Link href="/collections/bracelets">
-              Bracelets <span>→</span>
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -55,30 +59,134 @@ export default function Home() {
             Us
           </h2>
           <p>
-            At Reva Creation, jewellery is more than an accessory. It is a quiet
-            expression of elegance and a celebration of life’s most precious moments.
+            At Reva Creations, a piece is not only an accessory. It is the work of women artisans, designers and production teams who build fashion handbags, jewellery and home textiles for retailers across the UK, Europe, the USA, Australia and Asia.
           </p>
           <p>
-            We select the finest materials — precious metals, sparkling gemstones
-            and luminous pearls — and work with skilled artisans so that every piece
-            is not only beautiful, but built to last.
-          </p>
-          <p>
-            Whether you are marking love, a special occasion, or simply treating
-            yourself, we invite you to experience the celestial elegance that
-            defines us.
+            We work in metals, beads, embroidery, canvas, raffia and mixed media, finished for export.
           </p>
           <Link
             className={`${styles.btn} ${styles.btnGhost}`}
             href="/about"
             style={{ marginTop: "22px" }}
           >
-            More about us →
+            MORE ABOUT US →
           </Link>
         </div>
         <div className={styles.aboutPhoto}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/YvnEZ.jpg" alt="Reva Creation campaign" />
+          <img src="/about_portrait_1789373426810.jpg" alt="Reva Creations atelier" />
+        </div>
+      </section>
+
+      <section className={styles.sectionBlock}>
+        <div className={styles.featuresContainer}>
+          
+          <div className={styles.featuresTopRow}>
+            <div className={styles.featuresLeft}>
+              <h2 className={styles.featuresTitle}>What sets us apart</h2>
+              
+              <div className={styles.featureCards}>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureNum}>01</div>
+                  <div className={styles.featureText}>
+                    <strong>Handmade</strong>
+                    No mass-produced PU or machine-only bags.
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureNum}>02</div>
+                  <div className={styles.featureText}>
+                    <strong>Women-led</strong>
+                    Skilled women artisans at the centre of production.
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureNum}>03</div>
+                  <div className={styles.featureText}>
+                    <strong>Export-ready</strong>
+                    Quality, compliance and agreed timelines.
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureNum}>04</div>
+                  <div className={styles.featureText}>
+                    <strong>Private label</strong>
+                    Built to the buyer’s brief and brand.
+                  </div>
+                </div>
+                <div className={styles.featureCard}>
+                  <div className={styles.featureNum}>05</div>
+                  <div className={styles.featureText}>
+                    <strong>Natural materials</strong>
+                    Cotton, jute, canvas, raffia and recycled cloth.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.featuresRight}>
+              <div className={styles.collage}>
+                <div className={styles.collageItem1Wrapper}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/product_tote_1789371407229.jpg" alt="Raffia tote" />
+                  <div className={styles.collageCaption}>Handwoven raffia</div>
+                </div>
+                <div className={styles.collageItem2Wrapper}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/cat_handbags_1789371467020.jpg" alt="Canvas tote" />
+                  <div className={styles.collageCaption}>Cotton canvas · private label</div>
+                </div>
+                <div className={styles.collageInset}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/atelier_beading_1789371225188.jpg" alt="Beading inset" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.materialsStrip}>
+            <div className={styles.materialsList}>
+              <div className={styles.materialItem}>
+                <div className={styles.materialSwatch}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/product_tote_1789371407229.jpg" alt="Raffia" style={{ objectPosition: "center center" }} />
+                </div>
+                <span>Raffia</span>
+              </div>
+              <div className={styles.materialItem}>
+                <div className={styles.materialSwatch}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/cat_handbags_1789371467020.jpg" alt="Canvas" style={{ objectPosition: "bottom left" }} />
+                </div>
+                <span>Canvas</span>
+              </div>
+              <div className={styles.materialItem}>
+                <div className={styles.materialSwatch}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/product_cushion_1789371419434.jpg" alt="Cotton" style={{ objectPosition: "center 80%" }} />
+                </div>
+                <span>Cotton</span>
+              </div>
+              <div className={styles.materialItem}>
+                <div className={styles.materialSwatch}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/atelier_beading_1789371225188.jpg" alt="Beads" style={{ objectPosition: "center center" }} />
+                </div>
+                <span>Beads</span>
+              </div>
+              <div className={styles.materialItem}>
+                <div className={styles.materialSwatch}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/product_ring_1789371374171.jpg" alt="Metal" style={{ objectPosition: "center center" }} />
+                </div>
+                <span>Metal</span>
+              </div>
+            </div>
+            <div className={styles.materialsLine}>
+              Bags, jewellery and home — sampled to order.
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -87,25 +195,17 @@ export default function Home() {
       <section className={styles.products} id="products">
         <div className={styles.productsHead}>
           <h2>New from the atelier</h2>
-          <Link href="/collections">View all →</Link>
+          <Link href="/collections">VIEW ALL →</Link>
         </div>
         <div className={styles.grid}>
-          {products.slice(0, 4).map((product) => (
-            <Link href={`/products/${product.id}`} key={product.id} className={styles.card}>
+          {portfolioItems.map((product) => (
+            <Link href={product.link} key={product.id} className={styles.card}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={product.image} alt={product.name} />
-              {product.badge && (
-                <div className={styles.badge}>
-                  {product.badge}{" "}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
-                  </svg>
-                </div>
-              )}
               <div className={styles.cardMeta}>
                 <div>
                   <h3>{product.name}</h3>
-                  <span>{formatPrice(product.price)}</span>
+                  <span>{product.desc}</span>
                 </div>
                 <div className={styles.arrow}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -119,34 +219,52 @@ export default function Home() {
       </section>
 
       <section className={styles.cats} id="collections">
-        <Link className={styles.cat} href="/collections/rings">
+        <Link className={styles.cat} href="/collections/handbags">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/5f4cV.jpg" alt="Rings" />
+          <img src="/cat_handbags_1789371467020.jpg" alt="Handbags" />
           <h3>
-            Rings <span>→</span>
+            Handbags <span>→</span>
           </h3>
         </Link>
-        <Link className={styles.cat} href="/collections/earrings">
+        <Link className={styles.cat} href="/collections/jewellery">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/md0OH.jpg" alt="Earrings" />
+          <img src="/imagine_images/md0OH.jpg" alt="Jewellery" />
           <h3>
-            Earrings <span>→</span>
+            Jewellery <span>→</span>
           </h3>
         </Link>
-        <Link className={styles.cat} href="/collections/necklaces">
+        <Link className={styles.cat} href="/collections/home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/d4U7S.jpg" alt="Necklaces" />
+          <img src="/atelier_embroidery_1789371212302.jpg" alt="Home" />
           <h3>
-            Necklaces <span>→</span>
+            Home <span>→</span>
           </h3>
         </Link>
-        <Link className={styles.cat} href="/collections/bracelets">
+        <Link className={styles.cat} href="/collections/private-label">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/9rvvk.jpg" alt="Bracelets" />
+          <img src="/atelier_sampling_1789371198985.jpg" alt="Private Label" />
           <h3>
-            Bracelets <span>→</span>
+            Private label <span>→</span>
           </h3>
         </Link>
+      </section>
+
+
+
+      <section className={styles.sectionBlock}>
+        <div className={styles.finalCTA}>
+          <h2 className={styles.sectionTitle}>Work with us</h2>
+          <p className={styles.shortLine} style={{ marginBottom: "24px" }}>
+            Fashion handbags, jewellery and home furnishings for international retail. Samples in 10–14 days. Production in 4–6 weeks after approval. Developments kept confidential.
+          </p>
+          <div className={styles.clientsLarge}>
+            Fatface · Monsoon · Zara · Mango · New Look
+          </div>
+          <div className={styles.btnGroup}>
+            <Link className={styles.btn} href="/contact">ENQUIRE →</Link>
+            <Link className={`${styles.btn} ${styles.btnGhost}`} href="/collections">VIEW COLLECTIONS →</Link>
+          </div>
+        </div>
       </section>
     </main>
   );
