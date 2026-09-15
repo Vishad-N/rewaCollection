@@ -81,7 +81,7 @@ export default function AtelierPage() {
             </div>
             <span className={styles.stepNum}>04</span>
             <h3 className={styles.stepTitle}>Pack & ship</h3>
-            <p className={styles.stepDesc}>Export pack. Air from Delhi for jewellery; sea for handicrafts when required.</p>
+            <p className={styles.stepDesc}>Export pack. Air from Bhopal for jewellery; sea for handicrafts when required.</p>
           </div>
         </div>
       </section>
@@ -104,7 +104,7 @@ export default function AtelierPage() {
 
         <div className={styles.formSide}>
           <h3>Start a development</h3>
-          <p>Delhi · India · info@revacreation.com · +91 99710 15252</p>
+          <p>Bhopal · MP · info@revacreation.com · +91 99710 15252</p>
           
           <form onSubmit={(e) => e.preventDefault()}>
             <div className={styles.formRow}>
@@ -193,7 +193,7 @@ export default function AtelierPage() {
         </div>
         <div className={styles.trustPreItem}>
           <h5>Terms</h5>
-          <p>FOB Delhi</p>
+          <p>FOB Bhopal</p>
         </div>
         <div className={styles.trustPreItem}>
           <h5>Developments</h5>

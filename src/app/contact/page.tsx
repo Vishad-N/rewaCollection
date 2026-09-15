@@ -51,7 +51,10 @@ export default function Contact() {
               </div>
               <div className={styles.detailText}>
                 <span className={styles.detailLabel}>Visit</span>
-                <span className={styles.detailValue}>By appointment · Delhi · India</span>
+                <span className={styles.detailValue}>
+                  <strong>Registered Office:</strong> SR. MIG- 308, Rachna Tower, Rachna Nagar, Bhopal MP<br/><br/>
+                  <strong>Production Unit:</strong> Adarsh Trade Compound, A.B. Road, Saredi, Pachore MP
+                </span>
               </div>
             </div>
             
@@ -109,7 +112,7 @@ export default function Contact() {
               </div>
               <div className={styles.detailText}>
                 <span className={styles.detailLabel}>Terms</span>
-                <span className={styles.detailValue}>FOB Delhi</span>
+                <span className={styles.detailValue}>FOB Bhopal</span>
               </div>
             </div>
           </div>

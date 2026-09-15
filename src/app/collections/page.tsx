@@ -2,15 +2,15 @@ import Link from "next/link";
 import styles from "./collections.module.css";
 
 const collectionItems = [
-  { id: "clutch", name: "Beaded envelope clutch", category: "Handbags", image: "/product_clutch_1789371394234.jpg" },
-  { id: "tote", name: "Raffia market tote", category: "Handbags", image: "/product_tote_1789371407229.jpg" },
-  { id: "sling", name: "Embroidered sling", category: "Handbags", image: "/hero_bag_jewellery_1789373411823.jpg" },
-  { id: "ring", name: "Celeste Solitaire Ring", category: "Fashion jewellery", image: "/product_ring_1789371374171.jpg" },
-  { id: "hoops", name: "Twisted Gold Hoops", category: "Fashion jewellery", image: "/imagine_images/md0OH.jpg" },
-  { id: "bracelet", name: "Aurelia Bracelet", category: "Fashion jewellery", image: "/imagine_images/9rvvk.jpg" },
-  { id: "cushion", name: "Embroidered cushion", category: "Home", image: "/product_cushion_1789371419434.jpg" },
-  { id: "throw", name: "Woven throw", category: "Home", image: "/atelier_embroidery_1789371212302.jpg" },
-  { id: "accent", name: "Beaded table accent", category: "Home", image: "/atelier_beading_1789371225188.jpg" },
+  { id: "clutch", name: "Beaded envelope clutch", category: "Handbags", image: "/products/beaded_envelope_clutch.webp" },
+  { id: "aesthetic-keychain", name: "Aesthetic Keychain (Handbag Assecories)", category: "Handbags", image: "/products/beaded_keychain.webp" },
+  { id: "aesthetic-earrings", name: "Aesthetic Earrings", category: "Fashion jewellery", image: "/products/aesthetic_earrings.webp" },
+  { id: "embroidered-headband", name: "Embroidered Headband", category: "Fashion jewellery", image: "/products/embriodered_headband.webp" },
+  { id: "designer-shoulder-handbag", name: "Designer Shoulder Handbag", category: "Handbags", image: "/products/designer_shoulder_handbag.webp" },
+  { id: "golden-stylish-handbag", name: "Golden Stylish Handbag", category: "Handbags", image: "/products/golden_stylish_handbag.webp" },
+  { id: "macaw-pair-earrings", name: "Macaw Pair Earrings", category: "Fashion jewellery", image: "/products/macow_pair_earrings.webp" },
+  { id: "light-weight-earrings", name: "Light Weight Earrings", category: "Fashion jewellery", image: "/products/light_weight_earrings.webp" },
+  { id: "modern-beadwork-envelope", name: "Modern Beadwork Envelope", category: "Handbags", image: "/products/modern_beadwork_envelope.webp" },
 ];
 
 export default function Collections() {
@@ -28,7 +28,7 @@ export default function Collections() {
       <section className={styles.categoryStrip}>
         <Link href="/collections/handbags" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/cat_handbags_1789371467020.jpg" alt="Handbags" />
+          <img src="/products/c_handbag.webp" alt="Handbags" />
           <div className={styles.categoryOverlay}>
             <h3>Handbags</h3>
             <span>Lookbook</span>
@@ -36,7 +36,7 @@ export default function Collections() {
         </Link>
         <Link href="/collections/jewellery" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/d4U7S.jpg" alt="Jewellery" />
+          <img src="/products/c_jewellery.webp" alt="Jewellery" />
           <div className={styles.categoryOverlay}>
             <h3>Jewellery</h3>
             <span>Lookbook</span>
@@ -44,7 +44,7 @@ export default function Collections() {
         </Link>
         <Link href="/collections/home" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/atelier_finishing_1789371237480.jpg" alt="Home" />
+          <img src="/products/c_home.webp" alt="Home" />
           <div className={styles.categoryOverlay}>
             <h3>Home</h3>
             <span>Lookbook</span>
@@ -131,7 +131,7 @@ export default function Collections() {
         </div>
         <div className={styles.trustItem}>
           <div className={styles.trustText}>
-            <h4>Delhi · India</h4>
+            <h4>Bhopal · MP</h4>
           </div>
         </div>
       </section>

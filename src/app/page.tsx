@@ -3,10 +3,10 @@ import styles from "./page.module.css";
 import ReelsSection from "@/components/ReelsSection";
 
 const portfolioItems = [
-  { id: "celeste-solitaire-ring", name: "Celeste Solitaire Ring", desc: "Fashion jewellery", link: "/products/celeste-solitaire-ring", image: "/product_ring_1789371374171.jpg" },
-  { id: "clutch", name: "Beaded envelope clutch", desc: "Handbags", link: "/products/clutch", image: "/product_clutch_1789371394234.jpg" },
-  { id: "tote", name: "Raffia market tote", desc: "Handbags", link: "/products/tote", image: "/product_tote_1789371407229.jpg" },
-  { id: "cushion", name: "Embroidered cushion", desc: "Home", link: "/products/cushion", image: "/product_cushion_1789371419434.jpg" },
+  { id: "parrot-beads-bag", name: "Parrot Beaded Bag", desc: "Handbags", link: "/products/parrot-beads-bag", image: "/products/Parrot_beads_bag_1.webp" },
+  { id: "beads-earrings", name: "Beaded Earrings", desc: "Fashion jewellery", link: "/products/beads-earrings", image: "/products/beads_earrings.webp" },
+  { id: "beads-bracelet", name: "Beaded Bracelet", desc: "Fashion jewellery", link: "/products/beads-bracelet", image: "/products/beads_bracellete.png" },
+  { id: "premium-handbag", name: "Premium Luxury Handbag", desc: "Handbags", link: "/products/premium-handbag", image: "/products/premium_luxy_handbag.webp" },
 ];
 
 export default function Home() {
@@ -45,7 +45,7 @@ export default function Home() {
         <div className={styles.heroVisual}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero_bag_jewellery_1789373411823.jpg"
+            src="/products/hero_img.png"
             alt="Reva Creations"
           />
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
         <div className={styles.aboutPhoto}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/about_portrait_1789373426810.jpg" alt="Reva Creations atelier" />
+          <img src="/products/about_us_img.png" alt="Reva Creations atelier" />
         </div>
       </section>
 
@@ -128,17 +128,17 @@ export default function Home() {
               <div className={styles.collage}>
                 <div className={styles.collageItem1Wrapper}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/product_tote_1789371407229.jpg" alt="Raffia tote" />
-                  <div className={styles.collageCaption}>Handwoven raffia</div>
+                  <img src="/products/home_img1.webp" alt="Home image 1" />
+                  <div className={styles.collageCaption}>Handcrafted items</div>
                 </div>
                 <div className={styles.collageItem2Wrapper}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/cat_handbags_1789371467020.jpg" alt="Canvas tote" />
-                  <div className={styles.collageCaption}>Cotton canvas · private label</div>
+                  <img src="/products/home_img2.webp" alt="Home image 2" />
+                  <div className={styles.collageCaption}>Modern aesthetics</div>
                 </div>
                 <div className={styles.collageInset}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/atelier_beading_1789371225188.jpg" alt="Beading inset" />
+                  <img src="/products/home_img3.webp" alt="Home image 3" />
                 </div>
               </div>
             </div>
@@ -149,35 +149,35 @@ export default function Home() {
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/product_tote_1789371407229.jpg" alt="Raffia" style={{ objectPosition: "center center" }} />
+                  <img src="/products/cricle_1.webp" alt="Raffia" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Raffia</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/cat_handbags_1789371467020.jpg" alt="Canvas" style={{ objectPosition: "bottom left" }} />
+                  <img src="/products/circle_2.webp" alt="Canvas" style={{ objectPosition: "bottom left" }} />
                 </div>
                 <span>Canvas</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/product_cushion_1789371419434.jpg" alt="Cotton" style={{ objectPosition: "center 80%" }} />
+                  <img src="/products/circle_3.webp" alt="Cotton" style={{ objectPosition: "center 20%" }} />
                 </div>
                 <span>Cotton</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/atelier_beading_1789371225188.jpg" alt="Beads" style={{ objectPosition: "center center" }} />
+                  <img src="/products/circle_4.webp" alt="Beads" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Beads</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/product_ring_1789371374171.jpg" alt="Metal" style={{ objectPosition: "center center" }} />
+                  <img src="/products/circle_5.webp" alt="Metal" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Metal</span>
               </div>
@@ -221,21 +221,21 @@ export default function Home() {
       <section className={styles.cats} id="collections">
         <Link className={styles.cat} href="/collections/handbags">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/cat_handbags_1789371467020.jpg" alt="Handbags" />
+          <img src="/products/c_handbag.webp" alt="Handbags" />
           <h3>
             Handbags <span>→</span>
           </h3>
         </Link>
         <Link className={styles.cat} href="/collections/jewellery">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagine_images/md0OH.jpg" alt="Jewellery" />
+          <img src="/products/c_jewellery.webp" alt="Jewellery" />
           <h3>
             Jewellery <span>→</span>
           </h3>
         </Link>
         <Link className={styles.cat} href="/collections/home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/atelier_embroidery_1789371212302.jpg" alt="Home" />
+          <img src="/products/c_home.webp" alt="Home" />
           <h3>
             Home <span>→</span>
           </h3>

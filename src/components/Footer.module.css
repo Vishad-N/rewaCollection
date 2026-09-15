@@ -23,10 +23,22 @@
 }
 
 .footBrand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.brandText {
   font-family: var(--font-cormorant), serif;
-  font-size: 28px;
-  letter-spacing: 0.2em;
-  margin-bottom: 10px;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink);
+}
+.logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
 }
 
 .copy {

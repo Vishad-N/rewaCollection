@@ -25,7 +25,10 @@ export default function Header() {
             </svg>
           )}
         </button>
-        <Link href="/" className={styles.brand}>REVA CREATIONS</Link>
+        <Link href="/" className={styles.brand}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Reva Creations" className={styles.logo} />
+        </Link>
       </div>
 
       <nav className={styles.nav}>
@@ -37,9 +40,9 @@ export default function Header() {
       </nav>
 
       <div className={styles.headerActions}>
-        <Link href="/contact" style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "inherit", textDecoration: "none", fontWeight: 500 }}>
+        <a href="https://wa.me/919971015252?text=Hello%20Reva%20Creation!%20I'm%20Interested%20in%20your%20products" target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "inherit", textDecoration: "none", fontWeight: 500 }}>
           Enquire
-        </Link>
+        </a>
       </div>
 
       {isMenuOpen && (
@@ -50,7 +53,7 @@ export default function Header() {
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link href="/atelier" onClick={() => setIsMenuOpen(false)}>Atelier</Link>
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-            <Link href="/contact" onClick={() => setIsMenuOpen(false)} className={styles.mobileEnquire}>Enquire</Link>
+            <a href="https://wa.me/919971015252?text=Hello%20Reva%20Creation!%20I'm%20Interested%20in%20your%20products" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)} className={styles.mobileEnquire}>Enquire</a>
           </nav>
         </div>
       )}

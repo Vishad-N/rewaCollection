@@ -165,7 +165,7 @@ export default function CategoryPage({
           </div>
           <div className={styles.trustText}>
             <h4>By Appointment</h4>
-            <p>Visit our Mumbai & Jaipur ateliers</p>
+            <p>Visit our Pachore Production Unit</p>
           </div>
         </div>
       </section>

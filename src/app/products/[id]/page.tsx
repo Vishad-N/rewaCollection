@@ -14,6 +14,14 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
   const { addToCart } = useCart();
 
   const product = products.find(p => p.id === resolvedParams.id) || products[0];
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  
+  const allImages = product.images || [
+    product.image,
+    "/imagine_images/md0OH.jpg",
+    "/imagine_images/9rvvk.jpg",
+    "/imagine_images/d4U7S.jpg"
+  ];
 
   const handleAddToCart = () => {
     addToCart(product, quantity, activeSize);
@@ -35,35 +43,29 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           <div className={styles.mainImage}>
             {product.badge && <div className={styles.discountBadge}>{product.badge}</div>}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={product.image} alt={product.name} />
-            <div className={`${styles.navArrow} ${styles.left}`}>
+            <img src={allImages[selectedImageIndex]} alt={product.name} />
+            <div className={`${styles.navArrow} ${styles.left}`} onClick={() => setSelectedImageIndex((prev) => (prev === 0 ? allImages.length - 1 : prev - 1))}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </div>
-            <div className={`${styles.navArrow} ${styles.right}`}>
+            <div className={`${styles.navArrow} ${styles.right}`} onClick={() => setSelectedImageIndex((prev) => (prev === allImages.length - 1 ? 0 : prev + 1))}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M9 18l6-6-6-6" />
               </svg>
             </div>
           </div>
           <div className={styles.thumbnails}>
-            <div className={`${styles.thumb} ${styles.active}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={product.image} alt="Thumb 1" />
-            </div>
-            <div className={styles.thumb}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/md0OH.jpg" alt="Thumb 2" />
-            </div>
-            <div className={styles.thumb}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/d4U7S.jpg" alt="Thumb 3" />
-            </div>
-            <div className={styles.thumb}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/9rvvk.jpg" alt="Thumb 4" />
-            </div>
+            {allImages.map((img, index) => (
+              <div 
+                key={index}
+                className={`${styles.thumb} ${selectedImageIndex === index ? styles.active : ""}`}
+                onClick={() => setSelectedImageIndex(index)}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img} alt={`Thumb ${index + 1}`} />
+              </div>
+            ))}
           </div>
         </div>
 

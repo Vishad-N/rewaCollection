@@ -50,23 +50,23 @@ export default function About() {
         <div className={styles.categoryGrid}>
           <Link href="/collections/handbags" className={styles.categoryCard}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/cat_handbags_1789371467020.jpg" alt="Handbags" />
+            <img src="/products/t_handbag.webp" alt="Handbags" />
             <div className={styles.categoryOverlay}>
               <h3>Handbags</h3>
             </div>
           </Link>
           <Link href="/collections/jewellery" className={styles.categoryCard}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/imagine_images/md0OH.jpg" alt="Fashion jewellery" />
+            <img src="/products/t_fashion.webp" alt="Fashion jewellery" />
             <div className={styles.categoryOverlay}>
               <h3>Fashion jewellery</h3>
             </div>
           </Link>
           <Link href="/collections/home" className={styles.categoryCard}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/atelier_finishing_1789371237480.jpg" alt="Home furnishings" />
+            <img src="/products/curated_designs.webp" alt="Home furnishings" />
             <div className={styles.categoryOverlay}>
-              <h3>Home furnishings</h3>
+              <h3>Curated Designs</h3>
             </div>
           </Link>
         </div>
@@ -78,7 +78,7 @@ export default function About() {
         <div className={styles.processRow}>
           <div className={styles.processStep}>Sample in 10–14 days after a complete brief</div>
           <div className={styles.processStep}>Produce in 4–6 weeks after approval</div>
-          <div className={styles.processStep}>Default FOB Delhi</div>
+          <div className={styles.processStep}>Default FOB Bhopal</div>
           <div className={styles.processStep}>Trial orders negotiable</div>
         </div>
       </section>
