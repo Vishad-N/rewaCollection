@@ -98,7 +98,7 @@ export default function Collections() {
       <section className={styles.editorial}>
         <div className={styles.editorialImage}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/about_portrait_1789373426810.jpg" alt="Made to your brief" />
+          <img src="/products/made_to_brief.webp" alt="Made to your brief" />
         </div>
         <div className={styles.editorialCopy}>
           <span>PRIVATE LABEL</span>
