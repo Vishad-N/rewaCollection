@@ -30,6 +30,30 @@ const categoryConfig: Record<string, any> = {
     line2: "Made to sit alone or stack · 18k Gold",
     chips: ["All", "Tennis", "Cuff"],
   },
+  handbags: {
+    title: "Handbags",
+    line1: "Exquisite designs, handcrafted with precision.",
+    line2: "Premium materials · Atelier made",
+    chips: ["All"],
+  },
+  jewellery: {
+    title: "Jewellery",
+    line1: "Statement lines and everyday pieces.",
+    line2: "Hand-finished · Solid gold & beads",
+    chips: ["All"],
+  },
+  home: {
+    title: "Home",
+    line1: "Curated accents for your living space.",
+    line2: "Textured finishes · Artisanal",
+    chips: ["All"],
+  },
+  "private-label": {
+    title: "Private Label",
+    line1: "Custom manufacturing to your specification.",
+    line2: "Confidential developments · Export quality",
+    chips: ["All"],
+  }
 };
 
 export default function CategoryPage({
@@ -41,7 +65,15 @@ export default function CategoryPage({
   const [activeChip, setActiveChip] = useState("All");
   
   // We don't have deeply typed dummy data for the chips yet, so we'll just filter by category initially
-  const filteredProducts = products.filter((p) => p.category === category);
+  const filteredProducts = products.filter((p) => {
+    const pCat = p.category.toLowerCase();
+    const urlCat = category.toLowerCase();
+    if (urlCat === "handbags") return pCat === "handbags";
+    if (urlCat === "jewellery") return pCat === "fashion jewellery" || ["rings", "earrings", "necklaces", "bracelets"].includes(pCat);
+    if (urlCat === "home") return pCat === "home";
+    if (urlCat === "private-label") return pCat === "private label" || pCat === "private-label";
+    return pCat === urlCat;
+  });
   const config = categoryConfig[category] || {
     title: category,
     line1: "Curated selection.",

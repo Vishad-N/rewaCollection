@@ -97,21 +97,27 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           </div>
 
           <p className={styles.description}>
-            A timeless classic, designed to capture light from every angle, it brings unparalleled elegance to your most cherished moments.
+            {["Handbags", "Home"].includes(product.category) 
+              ? `An exquisitely crafted ${product.name.toLowerCase()} that blends contemporary design with traditional artistry, perfect for elevating any space or ensemble.`
+              : `A timeless classic, designed to capture light from every angle, it brings unparalleled elegance to your most cherished moments.`}
           </p>
 
-          <div className={styles.optionsLabel}>Ring Size</div>
-          <div className={styles.sizes}>
-            {["Size 5", "Size 6", "Size 7", "Size 8"].map((size) => (
-              <button
-                key={size}
-                className={`${styles.sizeBtn} ${activeSize === size ? styles.active : ""}`}
-                onClick={() => setActiveSize(size)}
-              >
-                {size}
-              </button>
-            ))}
-          </div>
+          {!["Handbags", "Home"].includes(product.category) && (
+            <>
+              <div className={styles.optionsLabel}>Ring Size</div>
+              <div className={styles.sizes}>
+                {["Size 5", "Size 6", "Size 7", "Size 8"].map((size) => (
+                  <button
+                    key={size}
+                    className={`${styles.sizeBtn} ${activeSize === size ? styles.active : ""}`}
+                    onClick={() => setActiveSize(size)}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
 
           <div className={styles.actionRow}>
             <div className={styles.quantity}>
@@ -127,7 +133,15 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
               </svg>
             </button>
-            <button className={styles.btnGhost}>Buy Now</button>
+            <a 
+              href={`https://wa.me/919971015252?text=I'm%20interested%20in%20the%20%22${encodeURIComponent(product.name)}%22%20product`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnGhost}
+              style={{ textDecoration: 'none' }}
+            >
+              Get Now
+            </a>
             <button className={styles.wishlistBtn}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
@@ -147,13 +161,13 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Share :</span>
               <div className={styles.socialIcons}>
-                <a href="#" className={styles.socialIcon}>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=https://revacreation.com/products/${product.id}`} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
                 </a>
-                <a href="#" className={styles.socialIcon}>
+                <a href={`https://twitter.com/intent/tweet?url=https://revacreation.com/products/${product.id}&text=${encodeURIComponent(product.name)}`} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
                 </a>
-                <a href="#" className={styles.socialIcon}>
+                <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://revacreation.com/products/${product.id}`} target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm-1-7a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm4 7h-2v-6h2v6z"/></svg>
                 </a>
               </div>
@@ -196,37 +210,64 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
                   <td>Attribute</td>
                   <td>Details</td>
                 </tr>
-                <tr>
-                  <td>Material</td>
-                  <td>18k Solid Gold</td>
-                </tr>
-                <tr>
-                  <td>Gemstone</td>
-                  <td>Natural Diamond, VVS Clarity, F Color</td>
-                </tr>
-                <tr>
-                  <td>Weight</td>
-                  <td>Approx. 3.2 Grams</td>
-                </tr>
-                <tr>
-                  <td>Craftsmanship</td>
-                  <td>Hand-polished in our Jaipur Atelier</td>
-                </tr>
-                <tr>
-                  <td>Packaging</td>
-                  <td>Premium Velvet Box with Certification</td>
-                </tr>
+                {["Handbags", "Home"].includes(product.category) ? (
+                  <>
+                    <tr>
+                      <td>Material</td>
+                      <td>{product.metal || 'Premium Crafted Material'}</td>
+                    </tr>
+                    <tr>
+                      <td>Craftsmanship</td>
+                      <td>Handcrafted in our Atelier</td>
+                    </tr>
+                    <tr>
+                      <td>Packaging</td>
+                      <td>Eco-friendly Protective Packaging</td>
+                    </tr>
+                    <tr>
+                      <td>Care</td>
+                      <td>Wipe with a clean, dry cloth</td>
+                    </tr>
+                  </>
+                ) : (
+                  <>
+                    <tr>
+                      <td>Material</td>
+                      <td>{product.metal || '18k Solid Gold'}</td>
+                    </tr>
+                    <tr>
+                      <td>Gemstone</td>
+                      <td>Natural Diamond, VVS Clarity, F Color</td>
+                    </tr>
+                    <tr>
+                      <td>Weight</td>
+                      <td>Approx. 3.2 Grams</td>
+                    </tr>
+                    <tr>
+                      <td>Craftsmanship</td>
+                      <td>Hand-polished in our Jaipur Atelier</td>
+                    </tr>
+                    <tr>
+                      <td>Packaging</td>
+                      <td>Premium Velvet Box with Certification</td>
+                    </tr>
+                  </>
+                )}
               </tbody>
             </table>
           )}
           {activeTab === "description" && (
             <p style={{ color: "var(--muted)", lineHeight: 1.8 }}>
-              This breathtaking solitaire ring captures the essence of eternal love. The band is smoothly polished and seamlessly tapers toward the center stone, enhancing the brilliance of the natural diamond. Perfect as an engagement ring or a statement piece for special occasions.
+              {["Handbags", "Home"].includes(product.category) 
+                ? `Designed with meticulous attention to detail, this ${product.name.toLowerCase()} showcases superior craftsmanship. The high-quality materials and unique aesthetic make it an essential piece for those who appreciate both functionality and elegance.`
+                : `This breathtaking piece captures the essence of eternal love and elegance. Smoothly polished and flawlessly finished, it enhances brilliance from every angle. Perfect as a statement piece for special occasions.`}
             </p>
           )}
           {activeTab === "reviews" && (
             <p style={{ color: "var(--muted)", lineHeight: 1.8 }}>
-              Customer reviews will be displayed here.
+              {["Handbags", "Home"].includes(product.category)
+                ? "⭐⭐⭐⭐⭐ - Beautiful craftsmanship and stunning details! Highly recommended."
+                : "Customer reviews will be displayed here."}
             </p>
           )}
         </div>

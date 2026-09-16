@@ -23,12 +23,11 @@ export const products: Product[] = [
   { id: "beads-earrings", name: "Beaded Earrings", price: 4500, image: "/products/beads_earrings.webp", images: ["/products/beads_earrings.webp"], category: "Fashion jewellery", metal: "Glass Beads & Brass" },
   { id: "beads-bracelet", name: "Beaded Bracelet", price: 3200, image: "/products/beads_bracellete.png", images: ["/products/beads_bracellete.png"], category: "Fashion jewellery", metal: "Glass Beads" },
   { id: "sling", name: "Embroidered sling", price: 5800, image: "/hero_bag_jewellery_1789373411823.jpg", category: "Handbags", metal: "Cotton Silk" },
-  { id: "ring", name: "Celeste Solitaire Ring", price: 48900, oldPrice: 60000, image: "/product_ring_1789371374171.jpg", category: "Fashion jewellery", badge: "New", metal: "18k Solid Gold" },
-  { id: "hoops", name: "Twisted Gold Hoops", price: 18500, oldPrice: 24000, image: "/imagine_images/md0OH.jpg", category: "Fashion jewellery", metal: "14k Yellow Gold" },
-  { id: "bracelet", name: "Aurelia Bracelet", price: 86000, oldPrice: 110000, image: "/imagine_images/9rvvk.jpg", category: "Fashion jewellery", metal: "18k White Gold" },
+
   { id: "premium-handbag", name: "Premium Luxury Handbag", price: 12500, image: "/products/premium_luxy_handbag.webp", images: ["/products/premium_luxy_handbag.webp"], category: "Handbags", metal: "Premium Leather" },
-  { id: "throw", name: "Woven throw", price: 3600, image: "/atelier_embroidery_1789371212302.jpg", category: "Home", metal: "Cotton" },
-  { id: "accent", name: "Beaded table accent", price: 1800, image: "/atelier_beading_1789371225188.jpg", category: "Home", metal: "Glass Beads" },
+  { id: "modern-art-earrings", name: "Modern Art Earrings", price: 3600, image: "/products/modern_art_earrings.png", images: ["/products/modern_art_earrings.png"], category: "Fashion jewellery", metal: "Handcrafted" },
+  { id: "hand-crafted-earrings", name: "Hand Crafted Earrings", price: 1800, image: "/products/hand_crafted_earrings.png", images: ["/products/hand_crafted_earrings.png"], category: "Fashion jewellery", metal: "Handcrafted" },
+  { id: "sombr-keychain", name: "Sombr Keychain", price: 1200, image: "/products/sombr_keychain.webp", images: ["/products/sombr_keychain.webp"], category: "Home", metal: "Handcrafted" },
   {
     id: "parrot-beads-bag",
     name: "Parrot Beaded Bag",
@@ -40,50 +39,7 @@ export const products: Product[] = [
     badge: "New",
     metal: "Handcrafted Beading",
   },
-  {
-    id: "twisted-gold-hoops",
-    name: "Twisted Gold Hoops",
-    price: 18500,
-    oldPrice: 24000,
-    image: "/imagine_images/md0OH.jpg",
-    category: "earrings",
-    metal: "14k Yellow Gold",
-  },
-  {
-    id: "tear-drop-pendant",
-    name: "Tear Drop Pendant",
-    price: 22400,
-    oldPrice: 30000,
-    image: "/imagine_images/d4U7S.jpg",
-    category: "necklaces",
-    metal: "18k Rose Gold",
-  },
-  {
-    id: "aurelia-diamond-bracelet",
-    name: "Aurelia Diamond Bracelet",
-    price: 86000,
-    oldPrice: 110000,
-    image: "/imagine_images/9rvvk.jpg",
-    category: "bracelets",
-    metal: "18k White Gold",
-  },
-  {
-    id: "ethereal-pearl-ring",
-    name: "Ethereal Pearl Ring",
-    price: 34200,
-    image: "/imagine_images/5f4cV.jpg",
-    category: "rings",
-    metal: "14k Solid Gold",
-  },
-  {
-    id: "classic-gold-studs",
-    name: "Classic Gold Studs",
-    price: 14000,
-    image: "/imagine_images/md0OH.jpg",
-    category: "earrings",
-    badge: "Bestseller",
-    metal: "18k Yellow Gold",
-  },
+
 ];
 
 export function formatPrice(price: number): string {

@@ -6,11 +6,21 @@ import { products } from "@/data/products";
 
 export default function AtelierPage() {
   // Grab 3 pieces to showcase as "Made in the atelier"
-  const featuredWork = [
+  const initialFeatured = [
     products.find(p => p.category === "Handbags") || products[0],
     products.find(p => p.category === "Fashion jewellery") || products[1],
     products.find(p => p.category === "Home") || products[2]
   ];
+  
+  const featuredWork = Array.from(new Set(initialFeatured));
+  
+  // Fill up to 3 items if any duplicates were removed
+  for (const product of products) {
+    if (featuredWork.length >= 3) break;
+    if (!featuredWork.some(p => p.id === product.id)) {
+      featuredWork.push(product);
+    }
+  }
 
   const scrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -38,7 +48,7 @@ export default function AtelierPage() {
       <section className={styles.heroImage}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
-          src="/imagine_images/atelier_hero_bench_1788874094895.jpg" 
+          src="/products/at_bg.png" 
           alt="Jewelry workshop bench" 
         />
       </section>
@@ -50,7 +60,7 @@ export default function AtelierPage() {
           <div className={styles.processStep}>
             <div className={styles.stepImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/atelier_process_sketch_1788874115792.jpg" alt="Sketching jewelry" />
+              <img src="/products/at_1.jpg" alt="Sketching jewelry" />
             </div>
             <span className={styles.stepNum}>01</span>
             <h3 className={styles.stepTitle}>Brief & sampling</h3>
@@ -59,7 +69,7 @@ export default function AtelierPage() {
           <div className={styles.processStep}>
             <div className={styles.stepImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/atelier_process_making_1788874134617.jpg" alt="Gold working" />
+              <img src="/products/at_2.jpg" alt="Gold working" />
             </div>
             <span className={styles.stepNum}>02</span>
             <h3 className={styles.stepTitle}>Craft</h3>
@@ -68,7 +78,7 @@ export default function AtelierPage() {
           <div className={styles.processStep}>
             <div className={styles.stepImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/atelier_process_setting_1788874152673.jpg" alt="Stone setting" />
+              <img src="/products/at_3.jpg" alt="Stone setting" />
             </div>
             <span className={styles.stepNum}>03</span>
             <h3 className={styles.stepTitle}>Finishing & QC</h3>
@@ -77,7 +87,7 @@ export default function AtelierPage() {
           <div className={styles.processStep}>
             <div className={styles.stepImage}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/imagine_images/atelier_process_finish_1788874166895.jpg" alt="Finished jewelry box" />
+              <img src="/products/at_4.jpg" alt="Finished jewelry box" />
             </div>
             <span className={styles.stepNum}>04</span>
             <h3 className={styles.stepTitle}>Pack & ship</h3>
