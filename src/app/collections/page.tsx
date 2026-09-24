@@ -26,36 +26,28 @@ export default function Collections() {
 
       {/* Category Strip */}
       <section className={styles.categoryStrip}>
-        <Link href="/collections/handbags" className={styles.categoryCard}>
+        <Link href="/collections/fashion-jewellery" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_handbag.webp" alt="Handbags" />
+          <img src="/products/c_jewellery.webp" alt="Fashion Jewellery" />
           <div className={styles.categoryOverlay}>
-            <h3>Handbags</h3>
+            <h3>Fashion Jewellery</h3>
             <span>Lookbook</span>
           </div>
         </Link>
-        <Link href="/collections/jewellery" className={styles.categoryCard}>
+        <Link href="/collections/handbags-accessories" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_jewellery.webp" alt="Jewellery" />
+          <img src="/products/c_handbag.webp" alt="Handbags & Accessories" />
           <div className={styles.categoryOverlay}>
-            <h3>Jewellery</h3>
+            <h3>Handbags & Accessories</h3>
             <span>Lookbook</span>
           </div>
         </Link>
-        <Link href="/collections/home" className={styles.categoryCard}>
+        <Link href="/collections/home-furnishings" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_home.webp" alt="Home" />
+          <img src="/products/c_home.webp" alt="Home Furnishings" />
           <div className={styles.categoryOverlay}>
-            <h3>Home</h3>
+            <h3>Home Furnishings</h3>
             <span>Lookbook</span>
-          </div>
-        </Link>
-        <Link href="/collections/private-label" className={styles.categoryCard}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/atelier_sampling_1789371198985.jpg" alt="Private label" />
-          <div className={styles.categoryOverlay}>
-            <h3>Private label</h3>
-            <span>By brief</span>
           </div>
         </Link>
       </section>
@@ -65,13 +57,11 @@ export default function Collections() {
         <div className={styles.filterLinks}>
           <Link href="/collections" className={styles.active}>All</Link>
           <span className={styles.filterDot}>·</span>
-          <Link href="/collections/handbags">Handbags</Link>
+          <Link href="/collections/fashion-jewellery">Fashion Jewellery</Link>
           <span className={styles.filterDot}>·</span>
-          <Link href="/collections/jewellery">Jewellery</Link>
+          <Link href="/collections/handbags-accessories">Handbags & Accessories</Link>
           <span className={styles.filterDot}>·</span>
-          <Link href="/collections/home">Home</Link>
-          <span className={styles.filterDot}>·</span>
-          <Link href="/collections/private-label">Private label</Link>
+          <Link href="/collections/home-furnishings">Home Furnishings</Link>
         </div>
         <div className={styles.filterRight}>
           <span>View</span>

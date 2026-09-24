@@ -4,7 +4,7 @@ import Link from "next/link";
 import styles from "./product.module.css";
 import { useState, use } from "react";
 import { useCart } from "@/context/CartContext";
-import { products, formatPrice } from "@/data/products";
+import { products } from "@/data/products";
 
 export default function ProductDetails({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = use(params);
@@ -71,53 +71,18 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
 
         {/* Right: Info */}
         <div className={styles.info}>
-          <div className={styles.category}>{product.category}</div>
+          <div className={styles.category}>{product.category}{product.subCategory ? ` · ${product.subCategory}` : ''}</div>
           <div className={styles.titleRow}>
             <h1 className={styles.title}>{product.name}</h1>
             <span className={styles.stockBadge}>In Stock</span>
           </div>
 
-          <div className={styles.reviews}>
-            <div className={styles.stars}>
-              {[...Array(4)].map((_, i) => (
-                <svg key={i} viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              ))}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                 <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-              </svg>
-            </div>
-            <span>4.8 (245 Reviews)</span>
-          </div>
-
           <div className={styles.prices}>
-            <div className={styles.price}>{formatPrice(product.price)}</div>
-            {product.oldPrice && <div className={styles.oldPrice}>{formatPrice(product.oldPrice)}</div>}
           </div>
 
           <p className={styles.description}>
-            {["Handbags", "Home"].includes(product.category) 
-              ? `An exquisitely crafted ${product.name.toLowerCase()} that blends contemporary design with traditional artistry, perfect for elevating any space or ensemble.`
-              : `A timeless classic, designed to capture light from every angle, it brings unparalleled elegance to your most cherished moments.`}
+            {product.description || `An exquisitely crafted ${product.name.toLowerCase()} that blends contemporary design with traditional artistry.`}
           </p>
-
-          {!["Handbags", "Home"].includes(product.category) && (
-            <>
-              <div className={styles.optionsLabel}>Ring Size</div>
-              <div className={styles.sizes}>
-                {["Size 5", "Size 6", "Size 7", "Size 8"].map((size) => (
-                  <button
-                    key={size}
-                    className={`${styles.sizeBtn} ${activeSize === size ? styles.active : ""}`}
-                    onClick={() => setActiveSize(size)}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </>
-          )}
 
           <div className={styles.actionRow}>
             <div className={styles.quantity}>
@@ -140,7 +105,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
               className={styles.btnGhost}
               style={{ textDecoration: 'none' }}
             >
-              Get Now
+              Enquire Now
             </a>
             <button className={styles.wishlistBtn}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -152,12 +117,22 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           <div className={styles.metaList}>
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>SKU :</span>
-              <span>REV85648HGJ</span>
+              <span>REV-{product.id.toUpperCase().slice(0, 8)}</span>
             </div>
             <div className={styles.metaRow}>
-              <span className={styles.metaLabel}>Tags :</span>
-              <span>Jewellery, Rings, Solitaire</span>
+              <span className={styles.metaLabel}>Material :</span>
+              <span>{product.material || product.metal || 'Handcrafted'}</span>
             </div>
+            <div className={styles.metaRow}>
+              <span className={styles.metaLabel}>Origin :</span>
+              <span>{product.origin || 'Handcrafted in Pachore, Madhya Pradesh'}</span>
+            </div>
+            {product.tags && (
+              <div className={styles.metaRow}>
+                <span className={styles.metaLabel}>Tags :</span>
+                <span>{product.tags.join(', ')}</span>
+              </div>
+            )}
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Share :</span>
               <div className={styles.socialIcons}>
@@ -194,15 +169,20 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             Additional Information
           </button>
           <button
-            className={`${styles.tabHeader} ${activeTab === "reviews" ? styles.active : ""}`}
-            onClick={() => setActiveTab("reviews")}
+            className={`${styles.tabHeader} ${activeTab === "care" ? styles.active : ""}`}
+            onClick={() => setActiveTab("care")}
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Reviews (245)
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Care & Origin
           </button>
         </div>
 
         <div className={styles.tabContent}>
+          {activeTab === "description" && (
+            <div style={{ color: "var(--muted)", lineHeight: 1.8 }}>
+              <p>{product.details || product.description || `Designed with meticulous attention to detail, this ${product.name.toLowerCase()} showcases superior craftsmanship.`}</p>
+            </div>
+          )}
           {activeTab === "additional" && (
             <table className={styles.attributesTable}>
               <tbody>
@@ -210,65 +190,39 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
                   <td>Attribute</td>
                   <td>Details</td>
                 </tr>
-                {["Handbags", "Home"].includes(product.category) ? (
-                  <>
-                    <tr>
-                      <td>Material</td>
-                      <td>{product.metal || 'Premium Crafted Material'}</td>
-                    </tr>
-                    <tr>
-                      <td>Craftsmanship</td>
-                      <td>Handcrafted in our Atelier</td>
-                    </tr>
-                    <tr>
-                      <td>Packaging</td>
-                      <td>Eco-friendly Protective Packaging</td>
-                    </tr>
-                    <tr>
-                      <td>Care</td>
-                      <td>Wipe with a clean, dry cloth</td>
-                    </tr>
-                  </>
-                ) : (
-                  <>
-                    <tr>
-                      <td>Material</td>
-                      <td>{product.metal || '18k Solid Gold'}</td>
-                    </tr>
-                    <tr>
-                      <td>Gemstone</td>
-                      <td>Natural Diamond, VVS Clarity, F Color</td>
-                    </tr>
-                    <tr>
-                      <td>Weight</td>
-                      <td>Approx. 3.2 Grams</td>
-                    </tr>
-                    <tr>
-                      <td>Craftsmanship</td>
-                      <td>Hand-polished in our Jaipur Atelier</td>
-                    </tr>
-                    <tr>
-                      <td>Packaging</td>
-                      <td>Premium Velvet Box with Certification</td>
-                    </tr>
-                  </>
-                )}
+                <tr>
+                  <td>Material</td>
+                  <td>{product.material || product.metal || 'Handcrafted'}</td>
+                </tr>
+                <tr>
+                  <td>Dimensions</td>
+                  <td>{product.dimensions || 'Varies by piece'}</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>{product.weight || 'Lightweight'}</td>
+                </tr>
+                <tr>
+                  <td>Category</td>
+                  <td>{product.category}{product.subCategory ? ` — ${product.subCategory}` : ''}</td>
+                </tr>
+                <tr>
+                  <td>Craftsmanship</td>
+                  <td>Handcrafted in our Pachore Atelier</td>
+                </tr>
+                <tr>
+                  <td>Packaging</td>
+                  <td>Export-grade protective packaging with dust bag</td>
+                </tr>
               </tbody>
             </table>
           )}
-          {activeTab === "description" && (
-            <p style={{ color: "var(--muted)", lineHeight: 1.8 }}>
-              {["Handbags", "Home"].includes(product.category) 
-                ? `Designed with meticulous attention to detail, this ${product.name.toLowerCase()} showcases superior craftsmanship. The high-quality materials and unique aesthetic make it an essential piece for those who appreciate both functionality and elegance.`
-                : `This breathtaking piece captures the essence of eternal love and elegance. Smoothly polished and flawlessly finished, it enhances brilliance from every angle. Perfect as a statement piece for special occasions.`}
-            </p>
-          )}
-          {activeTab === "reviews" && (
-            <p style={{ color: "var(--muted)", lineHeight: 1.8 }}>
-              {["Handbags", "Home"].includes(product.category)
-                ? "⭐⭐⭐⭐⭐ - Beautiful craftsmanship and stunning details! Highly recommended."
-                : "Customer reviews will be displayed here."}
-            </p>
+          {activeTab === "care" && (
+            <div style={{ color: "var(--muted)", lineHeight: 1.8 }}>
+              <p><strong>Care Instructions:</strong> {product.care || 'Store in a dry place. Handle with care.'}</p>
+              <p style={{ marginTop: '12px' }}><strong>Origin:</strong> {product.origin || 'Handcrafted in Pachore, Madhya Pradesh'}</p>
+              <p style={{ marginTop: '12px' }}><strong>Export Quality:</strong> All products meet international export standards. Packaging follows our standardised protocol — single polybag → grouped packing → ply export carton.</p>
+            </div>
           )}
         </div>
       </section>
@@ -281,7 +235,8 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
         </div>
         <div className={styles.grid}>
           {products
-            .filter((p) => p.id !== product.id)
+            .filter((p) => p.id !== product.id && p.category === product.category)
+            .concat(products.filter((p) => p.id !== product.id && p.category !== product.category))
             .slice(0, 4)
             .map((item) => (
             <Link href={`/products/${item.id}`} key={item.id} className={styles.card}>
@@ -296,8 +251,6 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
                 <span className={styles.cardCategory}>{item.category}</span>
                 <h3 className={styles.cardTitle}>{item.name}</h3>
                 <div className={styles.cardPrices}>
-                  <span className={styles.cardPrice}>{formatPrice(item.price)}</span>
-                  {item.oldPrice && <span className={styles.cardOldPrice}>{formatPrice(item.oldPrice)}</span>}
                 </div>
                 <div className={styles.cardCartBtn}>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -319,8 +272,8 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
           <div className={styles.featureText}>
-            <h4>Free Shipping</h4>
-            <p>Free shipping on orders above ₹50,000</p>
+            <h4>Global Export</h4>
+            <p>FOB Delhi · Air & Sea Freight</p>
           </div>
         </div>
         <div className={styles.feature}>
@@ -328,17 +281,17 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </div>
           <div className={styles.featureText}>
-            <h4>Flexible Payment</h4>
-            <p>Multiple secure payment options</p>
+            <h4>Quality Assured</h4>
+            <p>Rigorous QC at every stage</p>
           </div>
         </div>
         <div className={styles.feature}>
           <div className={styles.featureIcon}>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <div className={styles.featureText}>
-            <h4>24x7 Support</h4>
-            <p>We support you online all days.</p>
+            <h4>Artisan Made</h4>
+            <p>Handcrafted in Pachore, MP</p>
           </div>
         </div>
         <div className={styles.feature}>
@@ -346,8 +299,8 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
           <div className={styles.featureText}>
-            <h4>100% Authentic</h4>
-            <p>Original products with quality assurance</p>
+            <h4>EPCH Certified</h4>
+            <p>Export-ready, industry-recognised</p>
           </div>
         </div>
       </section>

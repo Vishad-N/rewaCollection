@@ -2,7 +2,7 @@
 
 import { useCart } from "@/context/CartContext";
 import styles from "./Cart.module.css";
-import { formatPrice } from "@/data/products";
+// import { formatPrice } from "@/data/products";
 import { useEffect } from "react";
 
 export default function Cart() {
@@ -54,7 +54,6 @@ export default function Cart() {
                     {item.size ? `Size: ${item.size} | ` : ""}Qty: {item.quantity}
                   </p>
                   <div className={styles.itemBottom}>
-                    <span className={styles.itemPrice}>{formatPrice(item.price)}</span>
                     <button 
                       className={styles.removeBtn} 
                       onClick={() => removeFromCart(item.id, item.size)}
@@ -72,7 +71,6 @@ export default function Cart() {
           <div className={styles.footer}>
             <div className={styles.totalRow}>
               <span className={styles.totalLabel}>Subtotal</span>
-              <span className={styles.totalPrice}>{formatPrice(totalPrice)}</span>
             </div>
             <button className={styles.checkoutBtn}>Checkout</button>
           </div>

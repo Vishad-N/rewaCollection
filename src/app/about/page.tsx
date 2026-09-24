@@ -7,19 +7,47 @@ export default function About() {
       
       {/* 1. Intro */}
       <section className={styles.introSection}>
+        <div className={styles.introImage}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/atelier_embroidery_1789371212302.jpg" alt="Women artisans embroidering in the atelier" />
+        </div>
         <div className={styles.introContent}>
           <div className={styles.eyebrow}>ABOUT</div>
           <h1 className={styles.title}>Our story</h1>
           <p className={styles.text}>
-            Reva Creations is an Indian manufacturer and exporter of fashion handbags, jewellery and home furnishings. The work is built with women artisans, designers and production teams for retail partners in the UK, Europe, the USA, Australia and Asia.
+            Reva Creation was born from a simple yet powerful belief:<br />
+            &ldquo;When a woman creates, she doesn&rsquo;t just make a product&mdash;she builds a future.&rdquo;
           </p>
           <p className={styles.text}>
-            Leadership experience in this trade goes back to 2001. We sample with care, finish to export standard, and keep new developments confidential.
+            In many villages of Madhya Pradesh, women possessed extraordinary skills in stitching, embroidery, weaving, and surface ornamentation&mdash;but lacked access to markets, income stability, and recognition. Reva Creation was founded to bridge this gap.
           </p>
+          <p className={styles.text}>
+            Starting with small artisan groups and limited resources, we focused on:
+          </p>
+          <ul className={styles.textList}>
+            <li>Skill upgradation</li>
+            <li>Design guidance</li>
+            <li>Market linkage</li>
+            <li>Ethical production practice</li>
+          </ul>
         </div>
-        <div className={styles.introImage}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/atelier_embroidery_1789371212302.jpg" alt="Women artisans embroidering in the atelier" />
+      </section>
+
+      {/* Mission Banner added to Our Story */}
+      <section className={styles.missionBanner}>
+        <div className={styles.missionOverlay}>
+          <h2 className={styles.missionTitle}>Reva Creations Pvt. Ltd.</h2>
+          <p className={styles.missionText}>
+            <strong>Reva Creations Pvt. Ltd.</strong> stands as a modern, ethical, quality-driven Indian manufacturer combining global fashion aesthetics with artisan heritage. Our commitment to women empowerment, responsible manufacturing, impeccable craftsmanship, and strong compliance makes us an ideal long-term partner for brands and retailers worldwide. We look forward to building meaningful collaborations and crafting beautiful products for the global market.
+          </p>
+          <div className={styles.missionDivider}></div>
+          <div className={styles.missionContact}>
+            <p>+91-9971015252</p>
+            <p>info@revacreation.com</p>
+          </div>
+          <div className={styles.missionDots}>
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </section>
 
@@ -78,8 +106,8 @@ export default function About() {
         <div className={styles.processRow}>
           <div className={styles.processStep}>Sample in 10–14 days after a complete brief</div>
           <div className={styles.processStep}>Produce in 4–6 weeks after approval</div>
-          <div className={styles.processStep}>Default FOB Bhopal</div>
-          <div className={styles.processStep}>Trial orders negotiable</div>
+          <div className={styles.processStep}>Default FOB Delhi</div>
+          <div className={styles.processStep}>Min. Order: USD 4000 / EUR 3000 (Trial orders negotiable)</div>
         </div>
       </section>
 

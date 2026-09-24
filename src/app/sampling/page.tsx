@@ -16,9 +16,9 @@ export default function SamplingPage() {
           
           <h3>Our Process</h3>
           <ul>
-            <li><strong>Briefing:</strong> Share your tech pack, reference images, or physical samples with us.</li>
-            <li><strong>Development:</strong> Our artisans and designers will develop the initial prototype, focusing on material selection, construction, and finish.</li>
-            <li><strong>Timeline:</strong> Samples are typically completed within 10–14 days after receiving a complete brief.</li>
+            <li><strong>Briefing:</strong> Share your tech pack, reference images, or physical samples with us. New developments are kept fully confidential.</li>
+            <li><strong>Development Cost:</strong> FOB + development charges + courier. Samples are available at your own courier charges (UPS/FedEx prepaid).</li>
+            <li><strong>Timeline:</strong> Sampling lead time is typically 10–14 days after receiving complete specifications.</li>
             <li><strong>Review:</strong> We provide detailed photos or ship physical samples for your review and approval.</li>
           </ul>
 

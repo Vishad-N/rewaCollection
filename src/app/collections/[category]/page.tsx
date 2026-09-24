@@ -3,56 +3,26 @@
 import { use, useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./category.module.css";
-import { products, formatPrice } from "@/data/products";
+import { products } from "@/data/products";
 
 const categoryConfig: Record<string, any> = {
-  rings: {
-    title: "Rings",
-    line1: "Solitaires, bands, and stacking pieces.",
-    line2: "Hand-finished in solid gold · Made in our atelier",
-    chips: ["All", "Solitaire", "Pearl", "Stacking"],
-  },
-  earrings: {
-    title: "Earrings",
-    line1: "Hoops and studs in 18k and 14k.",
-    line2: "Made to be lived in · Handcrafted",
-    chips: ["All", "Hoops", "Studs"],
-  },
-  necklaces: {
-    title: "Necklaces",
-    line1: "Chains and drops, set by hand.",
-    line2: "Solid gold · Ethical diamonds",
-    chips: ["All", "Pendant", "Chain"],
-  },
-  bracelets: {
-    title: "Bracelets",
-    line1: "Statement lines and everyday cuffs.",
-    line2: "Made to sit alone or stack · 18k Gold",
-    chips: ["All", "Tennis", "Cuff"],
-  },
-  handbags: {
-    title: "Handbags",
-    line1: "Exquisite designs, handcrafted with precision.",
-    line2: "Premium materials · Atelier made",
-    chips: ["All"],
-  },
-  jewellery: {
-    title: "Jewellery",
+  "fashion-jewellery": {
+    title: "Fashion Jewellery",
     line1: "Statement lines and everyday pieces.",
     line2: "Hand-finished · Solid gold & beads",
-    chips: ["All"],
+    chips: ["All", "Statement Necklaces", "Beaded Earrings", "Bracelets & Cuffs", "Headbands"],
   },
-  home: {
-    title: "Home",
+  "handbags-accessories": {
+    title: "Handbags & Accessories",
+    line1: "Exquisite designs, handcrafted with precision.",
+    line2: "Premium materials · Atelier made",
+    chips: ["All", "Beaded Purses", "Envelope Clutches", "Totes & Sling Bags", "Keychains"],
+  },
+  "home-furnishings": {
+    title: "Home Furnishings",
     line1: "Curated accents for your living space.",
     line2: "Textured finishes · Artisanal",
-    chips: ["All"],
-  },
-  "private-label": {
-    title: "Private Label",
-    line1: "Custom manufacturing to your specification.",
-    line2: "Confidential developments · Export quality",
-    chips: ["All"],
+    chips: ["All", "Cushion Covers", "Table Runners", "Curated Accents", "Artisanal Decor"],
   }
 };
 
@@ -68,11 +38,18 @@ export default function CategoryPage({
   const filteredProducts = products.filter((p) => {
     const pCat = p.category.toLowerCase();
     const urlCat = category.toLowerCase();
-    if (urlCat === "handbags") return pCat === "handbags";
-    if (urlCat === "jewellery") return pCat === "fashion jewellery" || ["rings", "earrings", "necklaces", "bracelets"].includes(pCat);
-    if (urlCat === "home") return pCat === "home";
-    if (urlCat === "private-label") return pCat === "private label" || pCat === "private-label";
-    return pCat === urlCat;
+    
+    // Check if the current product matches the selected subcategory (activeChip)
+    let matchesChip = true;
+    if (activeChip !== "All") {
+      matchesChip = p.subCategory === activeChip;
+    }
+
+    if (urlCat === "handbags-accessories") return pCat === "handbags & accessories" && matchesChip;
+    if (urlCat === "fashion-jewellery") return pCat === "fashion jewellery" && matchesChip;
+    if (urlCat === "home-furnishings") return pCat === "home furnishings" && matchesChip;
+    
+    return pCat === urlCat && matchesChip;
   });
   const config = categoryConfig[category] || {
     title: category,
@@ -144,7 +121,6 @@ export default function CategoryPage({
                   <span className={styles.cardMetal}>{product.metal}</span>
                 </div>
                 <div className={styles.cardPrice}>
-                  {formatPrice(product.price)}
                 </div>
               </div>
             </Link>

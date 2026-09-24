@@ -3,7 +3,7 @@
 import { useCart } from "@/context/CartContext";
 import styles from "./Search.module.css";
 import { useState, useEffect, useRef } from "react";
-import { products, formatPrice } from "@/data/products";
+import { products } from "@/data/products";
 import Link from "next/link";
 
 export default function Search() {
@@ -70,7 +70,6 @@ export default function Search() {
                 <div className={styles.cardMeta}>
                   <div>
                     <h3>{product.name}</h3>
-                    <span>{formatPrice(product.price)}</span>
                   </div>
                   <div className={styles.arrow}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

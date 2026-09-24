@@ -164,11 +164,6 @@ export default function AtelierPage() {
               ></textarea>
             </div>
 
-            <div className={styles.formGroup}>
-              <label>Reference Upload</label>
-              <input type="file" className={styles.formInput} style={{ fontSize: "13px", padding: "8px 0" }} />
-            </div>
-
             <button type="submit" className={styles.submitBtn}>SEND BRIEF →</button>
           </form>
         </div>
@@ -203,7 +198,7 @@ export default function AtelierPage() {
         </div>
         <div className={styles.trustPreItem}>
           <h5>Terms</h5>
-          <p>FOB Bhopal</p>
+          <p>FOB Delhi</p>
         </div>
         <div className={styles.trustPreItem}>
           <h5>Developments</h5>

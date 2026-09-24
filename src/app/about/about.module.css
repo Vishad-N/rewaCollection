@@ -1,19 +1,35 @@
 .page {
-  background: var(--cream);
+  background-color: var(--cream);
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-200,100 C300,-100 700,400 1200,100 C1700,-200 2100,200 2500,0' fill='none' stroke='%23C8B496' stroke-width='1.5' stroke-opacity='0.3' /%3E%3Cpath d='M-100,500 C400,600 800,200 1300,500 C1800,800 2200,400 2600,600' fill='none' stroke='%23C8B496' stroke-width='2' stroke-opacity='0.4' /%3E%3Cpath d='M0,900 C500,800 900,1100 1400,900 C1900,700 2300,1000 2800,900' fill='none' stroke='%23C8B496' stroke-width='1' stroke-opacity='0.2' /%3E%3C/svg%3E"),
+    radial-gradient(circle at 80% 20%, rgba(200, 180, 150, 0.4) 0%, rgba(200, 180, 150, 0) 50%),
+    radial-gradient(circle at 20% 80%, rgba(240, 235, 225, 0.7) 0%, rgba(240, 235, 225, 0) 50%);
+  background-attachment: fixed;
+  background-size: cover, 100% 100%, 100% 100%;
+  background-position: center;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
+
+
 
 .introSection {
   padding: 80px 64px 60px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .introContent {
-  max-width: 640px;
-  margin: 0 auto 48px;
+  flex: 1;
+  text-align: left;
 }
 
 .eyebrow {
@@ -43,13 +59,26 @@
   margin-bottom: 16px;
 }
 
+.textList {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-light);
+  font-weight: 300;
+  margin-bottom: 16px;
+  text-align: left;
+  display: inline-block;
+}
+
+.textList li {
+  margin-bottom: 8px;
+}
+
 .introImage {
+  flex: 1;
   width: 100%;
-  max-width: 1000px;
-  aspect-ratio: 21/9;
+  aspect-ratio: 4/5;
   border-radius: 20px;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 .introImage img {
@@ -60,6 +89,8 @@
 
 .sectionBlock {
   padding: 80px 64px;
+  position: relative;
+  z-index: 1;
 }
 
 .beigeBg {
@@ -297,6 +328,17 @@
 }
 
 @media (max-width: 1024px) {
+  .introSection {
+    flex-direction: column;
+    text-align: center;
+  }
+  .introContent {
+    text-align: center;
+    margin-top: 48px;
+  }
+  .introImage {
+    aspect-ratio: 16/9;
+  }
   .factsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -323,5 +365,96 @@
   .btn {
     width: 100%;
     justify-content: center;
+  }
+}
+
+/* Mission Banner */
+.missionBanner {
+  position: relative;
+  width: 100%;
+  background-image: url('/products/about_us_img.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+}
+
+.missionOverlay {
+  background-color: rgba(0, 43, 94, 0.85); /* Deep blue overlay #002b5e */
+  padding: 100px 48px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.missionTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 48px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.missionText {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.missionDivider {
+  height: 1px;
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 24px;
+}
+
+.missionContact {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+.missionContact p {
+  margin: 4px 0;
+}
+
+.missionDots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.missionDots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .missionOverlay {
+    padding: 60px 20px;
+  }
+  .missionTitle {
+    font-size: 36px;
+  }
+  .missionText {
+    font-size: 14px;
+  }
+  .missionContact {
+    font-size: 16px;
   }
 }

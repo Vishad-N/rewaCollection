@@ -112,7 +112,7 @@ export default function Contact() {
               </div>
               <div className={styles.detailText}>
                 <span className={styles.detailLabel}>Terms</span>
-                <span className={styles.detailValue}>FOB Bhopal</span>
+                <span className={styles.detailValue}>FOB Delhi</span>
               </div>
             </div>
           </div>
@@ -176,11 +176,7 @@ export default function Contact() {
                 ></textarea>
               </div>
               
-              <div className={styles.formGroupFull} style={{ marginTop: '24px' }}>
-                <label htmlFor="file">File upload (optional)</label>
-                <input type="file" id="file" name="file" />
-              </div>
-              
+
               <button type="button" className={styles.btn}>
                 SEND BRIEF <span>→</span>
               </button>

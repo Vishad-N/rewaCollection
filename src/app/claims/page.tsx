@@ -14,16 +14,12 @@ export default function ClaimsPage() {
             Quality is at the core of our manufacturing process. We implement a rigorous Quality Control (QC) protocol at every stage of production—from raw material sourcing to final finishing and packing.
           </p>
           
-          <h3>Our Policy</h3>
+          <h3>Return/Claim Policy</h3>
           <ul>
-            <li><strong>Inspection:</strong> We welcome third-party inspections and quality audits prior to dispatch.</li>
-            <li><strong>Reporting a Claim:</strong> In the unlikely event that you receive goods that do not meet the approved sample standard, please notify us within 14 days of receipt.</li>
-            <li><strong>Resolution:</strong> Claims are handled on a case-by-case basis. We are committed to working with our partners to find a fair resolution, which may include credit notes or replacement in future orders.</li>
+            <li><strong>Quality Systems:</strong> We maintain strict quality systems to ensure every product meets our high standards.</li>
+            <li><strong>Reporting a Claim:</strong> In the rare event of faulty goods, please notify us with detailed photographs.</li>
+            <li><strong>Resolution:</strong> We ensure prompt and fair resolution through mutual agreement for any verified claims.</li>
           </ul>
-
-          <p>
-            Please provide detailed photographs and a summary of the issue when reporting a claim to help our team investigate and resolve the matter swiftly.
-          </p>
         </div>
 
         <div className={styles.btnContainer}>

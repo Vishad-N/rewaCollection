@@ -18,7 +18,7 @@ export default function Footer() {
       </div>
       <div>
         <h4>House</h4>
-        <Link href="/story">Our Story</Link>
+        <Link href="/about">Our Story</Link>
         <Link href="/atelier">Atelier</Link>
         <Link href="/ethics">Ethics & sourcing</Link>
       </div>
