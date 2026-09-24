@@ -248,7 +248,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background: linear-gradient(to top, var(--gold-dark) 50%, var(--ink) 50%);
+  background: linear-gradient(to top, var(--white) 50%, var(--ink) 50%);
   background-size: 100% 200%;
   background-position: top;
   color: var(--white);
@@ -256,7 +256,7 @@
   padding: 0 32px;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
   border: none;
   cursor: pointer;
@@ -265,6 +265,7 @@
 
 .btnPrimary:hover {
   background-position: bottom;
+  color: var(--ink);
 }
 .btnGhost {
   display: flex;
@@ -279,7 +280,7 @@
   padding: 0 32px;
   border-radius: 8px;
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);

@@ -40,8 +40,11 @@ export default function Header() {
       </nav>
 
       <div className={styles.headerActions}>
-        <a href="https://wa.me/919971015252?text=Hello%20Reva%20Creation!%20I'm%20Interested%20in%20your%20products" target="_blank" rel="noopener noreferrer" style={{ fontSize: "11px", letterSpacing: "0.2em", textTransform: "uppercase", color: "inherit", textDecoration: "none", fontWeight: 500 }}>
-          Enquire
+        <a href="https://wa.me/919971015252?text=Hello%20Reva%20Creation!%20I'm%20Interested%20in%20your%20products" target="_blank" rel="noopener noreferrer" className={styles.enquireBtn}>
+          <div className={styles.enquireBtnText}>
+            <span>Get in Touch</span>
+            <span>Enquire</span>
+          </div>
         </a>
       </div>
 

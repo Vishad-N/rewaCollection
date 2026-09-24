@@ -89,6 +89,101 @@
   height: 18px;
 }
 
+/* Brutalist Enquire Button */
+.enquireBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--ink);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--white);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px var(--ink), 4px 4px 0 var(--gold);
+  transition: all 0.1s ease-out;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.enquireBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  z-index: 1;
+  transition: none;
+  opacity: 0;
+}
+
+@keyframes slide {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.enquireBtn:hover::before {
+  opacity: 1;
+  animation: slide 1.5s infinite;
+}
+
+.enquireBtn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 0 0 0 1px var(--ink), 7px 7px 0 var(--ink);
+  background-color: var(--ink);
+  color: var(--white);
+}
+
+.enquireBtn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 1px var(--ink), 0px 0px 0 var(--gold);
+  background-color: var(--white);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.enquireBtnText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+}
+
+.enquireBtn:hover .enquireBtnText {
+  transform: skew(-5deg);
+}
+
+.enquireBtn:active .enquireBtnText {
+  transform: skew(5deg);
+}
+
+.enquireBtnText span:first-child {
+  font-size: 8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+}
+
+.enquireBtnText span:last-child {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
 .mobileDrawer {
   position: absolute;
   top: 100%;
