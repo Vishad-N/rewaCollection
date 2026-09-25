@@ -13,7 +13,7 @@ export default function Footer() {
         <p>
           Jewellery, handbags and home furnishings.
           <br />
-          Partners, sampling, Bhopal & Pachore.
+          Partners, sampling, Indore & Noida.
         </p>
       </div>
       <div>
@@ -32,8 +32,8 @@ export default function Footer() {
       <div>
         <h4>Visit</h4>
         <p style={{ display: 'flex', flexDirection: 'column', gap: '8px', lineHeight: '1.4' }}>
-          <span><strong>Registered Address:</strong><br/>SR. MIG- 308, Rachna Tower,<br/>Rachna Nagar, Bhopal MP</span>
-          <span><strong>Production Unit:</strong><br/>Adarsh Trade Compound, A.B. Road,<br/>Saredi, Pachore MP</span>
+          <span><strong>Registered Address:</strong><br/>ED/149 Scheme No. 94, Ring Road,<br/>Indore - 452016 India</span>
+          <span><strong>Production Unit:</strong><br/>C-269, Sector 63,<br/>Noida (UP) Pin - 201301, India</span>
           <span style={{ marginTop: '8px' }}>
             <a href="mailto:info@revacreation.com">info@revacreation.com</a>
             <br />

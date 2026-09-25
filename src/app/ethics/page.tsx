@@ -18,7 +18,7 @@ export default function EthicsPage() {
           <ul>
             <li><strong>No Child Labor:</strong> We strictly prohibit the use of child labor in any part of our supply chain.</li>
             <li><strong>Fair Wages:</strong> All artisans and workers are paid fair, living wages for their craftsmanship.</li>
-            <li><strong>Safe Workplaces:</strong> Our production facilities in Bhopal and Pachore maintain rigorous health and safety standards.</li>
+            <li><strong>Safe Workplaces:</strong> Our production facilities in Indore and Noida maintain rigorous health and safety standards.</li>
             <li><strong>Women-Led:</strong> We are proud to be a women-led organization, empowering female artisans and leaders in the industry.</li>
           </ul>
 

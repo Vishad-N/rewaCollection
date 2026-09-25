@@ -19,7 +19,7 @@ export default function About() {
             &ldquo;When a woman creates, she doesn&rsquo;t just make a product&mdash;she builds a future.&rdquo;
           </p>
           <p className={styles.text}>
-            In many villages of Madhya Pradesh, women possessed extraordinary skills in stitching, embroidery, weaving, and surface ornamentation&mdash;but lacked access to markets, income stability, and recognition. Reva Creation was founded to bridge this gap.
+            In many villages of INDIA, women possessed extraordinary skills in stitching, embroidery, weaving, and surface ornamentation&mdash;but lacked access to markets, income stability, and recognition. Reva Creation was founded to bridge this gap.
           </p>
           <p className={styles.text}>
             Starting with small artisan groups and limited resources, we focused on:

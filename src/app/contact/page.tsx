@@ -52,8 +52,8 @@ export default function Contact() {
               <div className={styles.detailText}>
                 <span className={styles.detailLabel}>Visit</span>
                 <span className={styles.detailValue}>
-                  <strong>Registered Office:</strong> SR. MIG- 308, Rachna Tower, Rachna Nagar, Bhopal MP<br/><br/>
-                  <strong>Production Unit:</strong> Adarsh Trade Compound, A.B. Road, Saredi, Pachore MP
+                  <strong>Registered Office:</strong> ED/149 Scheme No. 94, Ring Road, Indore - 452016 India<br/><br/>
+                  <strong>Production Unit:</strong> C-269, Sector 63, Noida (UP) Pin - 201301, India
                 </span>
               </div>
             </div>

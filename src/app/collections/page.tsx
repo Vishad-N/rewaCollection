@@ -121,7 +121,7 @@ export default function Collections() {
         </div>
         <div className={styles.trustItem}>
           <div className={styles.trustText}>
-            <h4>Bhopal · MP</h4>
+            <h4>Indore · MP</h4>
           </div>
         </div>
       </section>

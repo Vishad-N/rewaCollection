@@ -125,7 +125,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             </div>
             <div className={styles.metaRow}>
               <span className={styles.metaLabel}>Origin :</span>
-              <span>{product.origin || 'Handcrafted in Pachore, Madhya Pradesh'}</span>
+              <span>{product.origin || 'Handcrafted in Noida, Uttar Pradesh'}</span>
             </div>
             {product.tags && (
               <div className={styles.metaRow}>
@@ -208,7 +208,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
                 </tr>
                 <tr>
                   <td>Craftsmanship</td>
-                  <td>Handcrafted in our Pachore Atelier</td>
+                  <td>Handcrafted in our Noida Atelier</td>
                 </tr>
                 <tr>
                   <td>Packaging</td>
@@ -220,7 +220,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           {activeTab === "care" && (
             <div style={{ color: "var(--muted)", lineHeight: 1.8 }}>
               <p><strong>Care Instructions:</strong> {product.care || 'Store in a dry place. Handle with care.'}</p>
-              <p style={{ marginTop: '12px' }}><strong>Origin:</strong> {product.origin || 'Handcrafted in Pachore, Madhya Pradesh'}</p>
+              <p style={{ marginTop: '12px' }}><strong>Origin:</strong> {product.origin || 'Handcrafted in Noida, Uttar Pradesh'}</p>
               <p style={{ marginTop: '12px' }}><strong>Export Quality:</strong> All products meet international export standards. Packaging follows our standardised protocol — single polybag → grouped packing → ply export carton.</p>
             </div>
           )}
@@ -291,7 +291,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
           </div>
           <div className={styles.featureText}>
             <h4>Artisan Made</h4>
-            <p>Handcrafted in Pachore, MP</p>
+            <p>Handcrafted in Noida, UP</p>
           </div>
         </div>
         <div className={styles.feature}>
