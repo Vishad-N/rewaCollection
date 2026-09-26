@@ -34,6 +34,7 @@ export default function Header() {
       <nav className={styles.nav}>
         <Link href="/">Home</Link>
         <Link href="/collections">Collections</Link>
+        <Link href="/gallery">Gallery</Link>
         <Link href="/about">About</Link>
         <Link href="/atelier">Atelier</Link>
         <Link href="/contact">Contact</Link>
@@ -53,6 +54,7 @@ export default function Header() {
           <nav className={styles.mobileNav}>
             <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link href="/collections" onClick={() => setIsMenuOpen(false)}>Collections</Link>
+            <Link href="/gallery" onClick={() => setIsMenuOpen(false)}>Gallery</Link>
             <Link href="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
             <Link href="/atelier" onClick={() => setIsMenuOpen(false)}>Atelier</Link>
             <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>

@@ -1,0 +1,112 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.galleryWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.sideText {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+/* When gallery-host has data-zoom="in", we hide siblings with class sideText */
+:global(.gallery-host)[data-zoom="in"] ~ .sideText {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.leftText {
+  left: 40px;
+}
+
+.leftText h1 {
+  font-family: var(--font-cormorant), serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: 0;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.rightText {
+  right: 40px;
+}
+
+.rightText p {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 0;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@media (max-width: 1024px) {
+  .leftText {
+    left: 20px;
+  }
+  .rightText {
+    right: 20px;
+  }
+  .leftText h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sideText {
+    opacity: 1;
+    visibility: visible;
+    left: 50%;
+    right: auto;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .leftText {
+    top: 100px;
+    transform: translateX(-50%);
+  }
+
+  .leftText h1 {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    transform: none;
+    font-size: 32px;
+  }
+
+  .rightText {
+    top: auto;
+    bottom: 30px;
+    transform: translateX(-50%);
+  }
+
+  .rightText p {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    font-size: 10px;
+  }
+}
