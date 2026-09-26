@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ReelsSection />
+      {/* <ReelsSection /> */}
 
       <section className={styles.products} id="products">
         <div className={styles.productsHead}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState, useEffect } from "react";
+import { use, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import styles from "./category.module.css";
 import { products } from "@/data/products";
@@ -35,6 +35,17 @@ export default function CategoryPage({
   const [activeChip, setActiveChip] = useState("All");
   const [sortBy, setSortBy] = useState("Featured");
   const [isSortOpen, setIsSortOpen] = useState(false);
+  const sortRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (sortRef.current && !sortRef.current.contains(event.target as Node)) {
+        setIsSortOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   
   // We don't have deeply typed dummy data for the chips yet, so we'll just filter by category initially
   const filteredProducts = products.filter((p) => {
@@ -103,26 +114,55 @@ export default function CategoryPage({
           ))}
         </div>
         <div className={styles.shopRight}>
-          <div className={styles.sortSelect} onClick={() => setIsSortOpen(!isSortOpen)} style={{ position: "relative", cursor: "pointer" }}>
+          <div ref={sortRef} className={styles.sortSelect} onClick={() => setIsSortOpen(!isSortOpen)} style={{ position: "relative", cursor: "pointer", display: "flex", alignItems: "center", gap: "8px" }}>
             Sort: {sortBy}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14" style={{ transform: isSortOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
               <path d="M6 9l6 6 6-6" />
             </svg>
-            {isSortOpen && (
-              <div style={{ position: "absolute", top: "100%", right: 0, backgroundColor: "var(--background)", border: "1px solid var(--border)", zIndex: 10, minWidth: "180px", marginTop: "8px", padding: "8px 0" }}>
-                {["Featured", "Price: Low to High", "Price: High to Low"].map((option) => (
-                  <div
-                    key={option}
-                    onClick={(e) => { e.stopPropagation(); setSortBy(option); setIsSortOpen(false); }}
-                    style={{ padding: "8px 16px", cursor: "pointer", color: sortBy === option ? "var(--foreground)" : "var(--muted)", fontWeight: sortBy === option ? "bold" : "normal" }}
-                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.05)"}
-                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-                  >
-                    {option}
-                  </div>
-                ))}
-              </div>
-            )}
+            <div style={{ 
+              position: "absolute", 
+              top: "100%", 
+              right: 0, 
+              backgroundColor: "#FDFBF7", 
+              border: "1px solid rgba(0,0,0,0.05)", 
+              borderRadius: "8px", 
+              boxShadow: "0 10px 25px rgba(0,0,0,0.08)", 
+              zIndex: 100, 
+              minWidth: "200px", 
+              marginTop: "12px", 
+              padding: "8px 0",
+              overflow: "hidden",
+              opacity: isSortOpen ? 1 : 0,
+              visibility: isSortOpen ? "visible" : "hidden",
+              transform: isSortOpen ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.95)",
+              transition: "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+              transformOrigin: "top right"
+            }}>
+              {["Featured", "Price: Low to High", "Price: High to Low"].map((option) => (
+                <div
+                  key={option}
+                  onClick={(e) => { e.stopPropagation(); setSortBy(option); setIsSortOpen(false); }}
+                  style={{ 
+                    padding: "12px 16px", 
+                    cursor: "pointer", 
+                    color: sortBy === option ? "#111" : "#666", 
+                    fontWeight: sortBy === option ? "500" : "400",
+                    fontSize: "14px",
+                    transition: "all 0.2s ease"
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = "#F3EFE6";
+                    e.currentTarget.style.color = "#111";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = sortBy === option ? "#111" : "#666";
+                  }}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
           </div>
           <span>{count} {count === 1 ? "piece" : "pieces"}</span>
         </div>
@@ -146,9 +186,6 @@ export default function CategoryPage({
                   <span className={styles.cardMetal}>{product.metal}</span>
                 </div>
                 <div className={styles.cardPrice}>
-                  <span style={{ fontSize: "14px" }}>
-                    {new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(product.price)}
-                  </span>
                 </div>
               </div>
             </Link>
