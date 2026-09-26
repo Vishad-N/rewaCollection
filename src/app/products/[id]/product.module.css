@@ -301,9 +301,74 @@
   justify-content: center;
   color: var(--muted);
   cursor: pointer;
+  transition: all 0.3s;
 }
-.wishlistBtn svg { width: 20px; height: 20px; }
+.wishlistBtn.active {
+  color: #e74c3c;
+  background: #fdf2f0;
+  border-color: #fadbd8;
+}
+.wishlistBtn svg { width: 20px; height: 20px; transition: all 0.3s; }
+.wishlistBtn.active svg {
+  fill: #e74c3c;
+}
 
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--ink);
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toastIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2ecc71;
+  color: white;
+}
+.toastIconRemoved {
+  background: #e74c3c;
+}
+
+.checkmark {
+  width: 10px;
+  height: 10px;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: white;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 .metaList {
   display: flex;
   flex-direction: column;

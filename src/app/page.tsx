@@ -169,35 +169,35 @@ export default function Home() {
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/cricle_1.webp" alt="Raffia" style={{ objectPosition: "center center" }} />
+                  <img src="/products/raffia_category.jpg" alt="Raffia" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Raffia</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/circle_2.webp" alt="Canvas" style={{ objectPosition: "bottom left" }} />
+                  <img src="/products/canvas_category.jpg" alt="Canvas" style={{ objectPosition: "bottom left" }} />
                 </div>
                 <span>Canvas</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/circle_3.webp" alt="Cotton" style={{ objectPosition: "center 20%" }} />
+                  <img src="/products/cotton_category.jpg" alt="Cotton" style={{ objectPosition: "center 20%" }} />
                 </div>
                 <span>Cotton</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/circle_4.webp" alt="Beads" style={{ objectPosition: "center center" }} />
+                  <img src="/products/beads_category.jpg" alt="Beads" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Beads</span>
               </div>
               <div className={styles.materialItem}>
                 <div className={styles.materialSwatch}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/products/circle_5.webp" alt="Metal" style={{ objectPosition: "center center" }} />
+                  <img src="/products/metal_category.jpg" alt="Metal" style={{ objectPosition: "center center" }} />
                 </div>
                 <span>Metal</span>
               </div>
@@ -248,7 +248,7 @@ export default function Home() {
           <div className={styles.prCard}>
             <div className={styles.prImgWrapper}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/products/c_jewellery.webp" alt="Fashion Jewellery" />
+              <img src="/products/fashion_jewellery_cover.jpg" alt="Fashion Jewellery" />
             </div>
             <h3>Fashion Jewellery</h3>
             <ul>
@@ -263,7 +263,7 @@ export default function Home() {
           <div className={styles.prCard}>
             <div className={styles.prImgWrapper}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/products/c_handbag.webp" alt="Handbags & Accessories" />
+              <img src="/products/handbags_accessories_cover.jpg" alt="Handbags & Accessories" />
             </div>
             <h3>Handbags & Accessories</h3>
             <ul>
@@ -276,7 +276,7 @@ export default function Home() {
           <div className={styles.prCard}>
             <div className={styles.prImgWrapper}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/products/c_home.webp" alt="Home Furnishings" />
+              <img src="/products/home_furnishings_cover.jpg" alt="Home Furnishings" />
             </div>
             <h3>Home Furnishings</h3>
             <ul>

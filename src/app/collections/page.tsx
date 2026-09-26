@@ -28,7 +28,7 @@ export default function Collections() {
       <section className={styles.categoryStrip}>
         <Link href="/collections/fashion-jewellery" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_jewellery.webp" alt="Fashion Jewellery" />
+          <img src="/products/fashion_jewellery_cover.jpg" alt="Fashion Jewellery" />
           <div className={styles.categoryOverlay}>
             <h3>Fashion Jewellery</h3>
             <span>Lookbook</span>
@@ -36,7 +36,7 @@ export default function Collections() {
         </Link>
         <Link href="/collections/handbags-accessories" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_handbag.webp" alt="Handbags & Accessories" />
+          <img src="/products/handbags_accessories_cover.jpg" alt="Handbags & Accessories" />
           <div className={styles.categoryOverlay}>
             <h3>Handbags & Accessories</h3>
             <span>Lookbook</span>
@@ -44,7 +44,7 @@ export default function Collections() {
         </Link>
         <Link href="/collections/home-furnishings" className={styles.categoryCard}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/c_home.webp" alt="Home Furnishings" />
+          <img src="/products/home_furnishings_cover.jpg" alt="Home Furnishings" />
           <div className={styles.categoryOverlay}>
             <h3>Home Furnishings</h3>
             <span>Lookbook</span>

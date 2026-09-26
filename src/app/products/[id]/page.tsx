@@ -11,6 +11,8 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
   const [activeTab, setActiveTab] = useState("additional");
   const [activeSize, setActiveSize] = useState("Size 6");
   const [quantity, setQuantity] = useState(1);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [toastMessage, setToastMessage] = useState<{show: boolean, message: string, type: 'add' | 'remove'}>({ show: false, message: '', type: 'add' });
   const { addToCart } = useCart();
 
   const product = products.find(p => p.id === resolvedParams.id) || products[0];
@@ -25,6 +27,19 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
 
   const handleAddToCart = () => {
     addToCart(product, quantity, activeSize);
+  };
+
+  const toggleFavorite = () => {
+    const newState = !isFavorite;
+    setIsFavorite(newState);
+    setToastMessage({
+      show: true,
+      message: newState ? 'Added to favourites' : 'Removed from favourites',
+      type: newState ? 'add' : 'remove'
+    });
+    setTimeout(() => {
+      setToastMessage(prev => ({ ...prev, show: false }));
+    }, 3000);
   };
 
   return (
@@ -107,7 +122,7 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
             >
               Enquire Now
             </a>
-            <button className={styles.wishlistBtn}>
+            <button className={`${styles.wishlistBtn} ${isFavorite ? styles.active : ''}`} onClick={toggleFavorite}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />
               </svg>
@@ -305,6 +320,22 @@ export default function ProductDetails({ params }: { params: Promise<{ id: strin
         </div>
       </section>
 
+      {/* Toast Notification */}
+      <div className={`${styles.toast} ${toastMessage.show ? styles.show : ''}`}>
+        <div className={`${styles.toastIcon} ${toastMessage.type === 'remove' ? styles.toastIconRemoved : ''}`}>
+          {toastMessage.type === 'add' ? (
+            <svg className={styles.checkmark} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+          ) : (
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          )}
+        </div>
+        <span>{toastMessage.message}</span>
+      </div>
     </main>
   );
 }
