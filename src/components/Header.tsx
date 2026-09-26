@@ -27,7 +27,7 @@ export default function Header() {
         </button>
         <Link href="/" className={styles.brand}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Reva Creations" className={styles.logo} />
+          <img src="/logo.png" alt="Reva Creation" className={styles.logo} />
         </Link>
       </div>
 

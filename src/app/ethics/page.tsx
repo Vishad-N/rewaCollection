@@ -11,7 +11,7 @@ export default function EthicsPage() {
         <div className={styles.contentBlock}>
           <h2>Our Commitment</h2>
           <p>
-            At Reva Creations, our commitment to ethical manufacturing is foundational to everything we do. We believe that beautiful products should be made in a way that respects the people who make them and the environment we all share.
+            At Reva Creation, our commitment to ethical manufacturing is foundational to everything we do. We believe that beautiful products should be made in a way that respects the people who make them and the environment we all share.
           </p>
           
           <h3>Labor Standards</h3>

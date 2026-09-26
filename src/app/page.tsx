@@ -41,7 +41,7 @@ export default function Home() {
           <h1>
             REVA
             <br />
-            CREATIONS
+            CREATION
           </h1>
           <div className={styles.heroTag}>Handmade in India. Built for global retail.</div>
           <p>
@@ -66,7 +66,7 @@ export default function Home() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/products/hero_img.png"
-            alt="Reva Creations"
+            alt="Reva Creation"
           />
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function Home() {
             Us
           </h2>
           <p>
-            At Reva Creations, a piece is not only an accessory. It is the work of women artisans, designers and production teams who build fashion handbags, jewellery and home textiles for retailers across the UK, Europe, the USA, Australia and Asia.
+            At Reva Creation, a piece is not only an accessory. It is the work of women artisans, designers and production teams who build fashion handbags, jewellery and home textiles for retailers across the UK, Europe, the USA, Australia and Asia.
           </p>
           <p>
             We work in metals, beads, embroidery, canvas, raffia and mixed media, finished for export.
@@ -94,7 +94,7 @@ export default function Home() {
         </div>
         <div className={styles.aboutPhoto}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/products/about_us_img.png" alt="Reva Creations atelier" />
+          <img src="/products/about_us_img.png" alt="Reva Creation atelier" />
         </div>
       </section>
 
@@ -327,7 +327,7 @@ export default function Home() {
           <div className={styles.centerCol}>
             <h2 className={styles.centerTitle}>Craftsmanship &<br />Finishing</h2>
             <div className={styles.centerBlueBox}>
-              <p>Each product at Reva Creations is <strong>constructed — not just manufactured.</strong> With skilled hands shaping, cutting, carving, joining, and finishing every piece, we ensure:</p>
+              <p>Each product at Reva Creation is <strong>constructed — not just manufactured.</strong> With skilled hands shaping, cutting, carving, joining, and finishing every piece, we ensure:</p>
             </div>
             <ul className={`${styles.iconList} ${styles.centerList}`}>
               <li>
@@ -393,7 +393,7 @@ export default function Home() {
             <h2 className={styles.certTitle}>Certifications & Memberships</h2>
             <div className={styles.certDivider}></div>
             <p className={styles.certDesc}>
-              Reva Creations continues the legacy of certified production systems and industry recognition.<br />
+              Reva Creation continues the legacy of certified production systems and industry recognition.<br />
               We proudly follow structured QMS (Quality Management Systems) processes. We hold/maintain association with Indian export bodies:
             </p>
             <div className={styles.certDivider}></div>

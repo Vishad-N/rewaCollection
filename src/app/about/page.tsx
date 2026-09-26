@@ -36,9 +36,9 @@ export default function About() {
       {/* Mission Banner added to Our Story */}
       <section className={styles.missionBanner}>
         <div className={styles.missionOverlay}>
-          <h2 className={styles.missionTitle}>Reva Creations Pvt. Ltd.</h2>
+          <h2 className={styles.missionTitle}>Reva Creation Pvt. Ltd.</h2>
           <p className={styles.missionText}>
-            <strong>Reva Creations Pvt. Ltd.</strong> stands as a modern, ethical, quality-driven Indian manufacturer combining global fashion aesthetics with artisan heritage. Our commitment to women empowerment, responsible manufacturing, impeccable craftsmanship, and strong compliance makes us an ideal long-term partner for brands and retailers worldwide. We look forward to building meaningful collaborations and crafting beautiful products for the global market.
+            <strong>Reva Creation Pvt. Ltd.</strong> stands as a modern, ethical, quality-driven Indian manufacturer combining global fashion aesthetics with artisan heritage. Our commitment to women empowerment, responsible manufacturing, impeccable craftsmanship, and strong compliance makes us an ideal long-term partner for brands and retailers worldwide. We look forward to building meaningful collaborations and crafting beautiful products for the global market.
           </p>
           <div className={styles.missionDivider}></div>
           <div className={styles.missionContact}>

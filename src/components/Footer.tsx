@@ -7,8 +7,8 @@ export default function Footer() {
       <div>
         <div className={styles.footBrand}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Reva Creations" className={styles.logo} />
-          <span className={styles.brandText}>Reva Creations Pvt. Ltd.</span>
+          <img src="/logo.png" alt="Reva Creation" className={styles.logo} />
+          <span className={styles.brandText}>Reva Creation Pvt. Ltd.</span>
         </div>
         <p>
           Jewellery, handbags and home furnishings.
@@ -41,7 +41,7 @@ export default function Footer() {
           </span>
         </p>
       </div>
-      <div className={styles.copy}>© 2026 Reva Creations Pvt. Ltd. All rights reserved.</div>
+      <div className={styles.copy}>© 2026 Reva Creation Pvt. Ltd. All rights reserved.</div>
     </footer>
   );
 }
